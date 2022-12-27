@@ -18,6 +18,7 @@ public class MyPlayer : MonoBehaviour
 	//Variables control the various actions the player can perform at any time.
 	//These are fields which can are public allowing for other sctipts to read them
 	//but can only be privately written to.
+	public float targetSpeed;
 	public bool IsFacingRight { get; private set; }
 	public bool IsFrozen { get; private set; }
 	public bool IsJumping { get; private set; }
@@ -222,25 +223,39 @@ public class MyPlayer : MonoBehaviour
 	#region RUN METHODS
 	private void Run(float lerpAmount)
 	{
-		//Calculate the direction we want to move in and our desired velocity
-		float targetSpeed = _moveInput.x * Data.runMaxSpeed;
-		//We can reduce are control using Lerp() this smooths changes to are direction and speed
-		targetSpeed = Mathf.Lerp(RB.velocity.x, targetSpeed, lerpAmount);
-		//200 MAX -> 1% Speed
-		//0   MIN -> 100% Speed
-		//
-		//targetSpeed = CoinCounter.Instance.Coins * 100 / CoinCounter.Instance.maxCoins;
 
-		if (IsFrozen)
+        #region Speed Levels
+        float speedCheckerL1 = CoinCounter.Instance.maxCoins / 4;     //Level 1 out of 4
+		float speedCheckerL2 = CoinCounter.Instance.maxCoins * 2 / 4; //Level 2 out of 4
+		float speedCheckerL3 = CoinCounter.Instance.maxCoins * 3 / 4; //Level 3 out of 4
+		float speedCheckerL4 = CoinCounter.Instance.maxCoins;         //Level 4 out of 4
+
+		//Check Level 1 out of 4
+		if(CoinCounter.Instance.Coins <= speedCheckerL1)
+			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount);
+		//Check Level 2 out of 4
+		else if(CoinCounter.Instance.Coins <= speedCheckerL2)
+			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) * 3 / 4;
+		//Check Level 3 out of 4
+		else if(CoinCounter.Instance.Coins <= speedCheckerL3)
+			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) * 2 / 4;
+		//Check Level 4 out of 4
+		else if(CoinCounter.Instance.Coins <= speedCheckerL4)
+			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) / 4;
+        #endregion
+
+        if(IsFrozen)
 			targetSpeed = 0;
 
-		if (targetSpeed == 0 || CollisionWithWall)
+        #region Animation Checks
+		if(targetSpeed == 0 || CollisionWithWall)
 			anim.SetBool("isRunning", false);
-		else if (targetSpeed != 0 || !CollisionWithWall)
+		else if(targetSpeed != 0 || !CollisionWithWall)
 			anim.SetBool("isRunning", true);
+        #endregion
 
-		#region Calculate AccelRate
-		float accelRate;
+        #region Calculate AccelRate
+        float accelRate;
 
 		//Gets an acceleration value based on if we are accelerating (includes turning) 
 		//or trying to decelerate (stop). As well as applying a multiplier if we're air borne.
