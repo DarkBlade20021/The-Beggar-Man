@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while(canShoot && bagsInstantiated == 0)
+        while(canShoot && bagsInstantiated == 0 && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag)
         {
             GameObject newBag = Instantiate(bag, shootPoint.position, shootPoint.rotation);
             newBag.transform.localScale = shootPoint.localScale;
