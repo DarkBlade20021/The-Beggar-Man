@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1019804506}
   - component: {fileID: 1019804508}
   - component: {fileID: 1019804507}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CollisionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 1709811826429974880}
   - component: {fileID: 8290165149891824399}
   - component: {fileID: 2762425453320258265}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,8 +139,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 3
   m_Sprite: {fileID: 6130615506615014702, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -172,8 +172,8 @@ MonoBehaviour:
   - {fileID: 8269288904995888386}
   - {fileID: 5669652726189501303}
   m_Bounds:
-    m_Center: {x: -1.6174726, y: -7.7528133, z: 0}
-    m_Extent: {x: 0.3495233, y: 1.2316301, z: 0}
+    m_Center: {x: -1.6174728, y: -7.7528133, z: 0}
+    m_Extent: {x: 0.3495232, y: 1.2316301, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &270822552130992642
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1392346811873753028}
   - component: {fileID: 4626334322544915311}
   - component: {fileID: 8550906457331121431}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,8 +245,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 7
   m_Sprite: {fileID: -5060153779006839907, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 5939312031151296748}
   - component: {fileID: 5640800583452165942}
   - component: {fileID: 8375732328481835535}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EyeL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,8 +349,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 9
   m_Sprite: {fileID: -4525314107762494382, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -393,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4260945453128344473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8269288904995888386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 8443685074959981833}
   - component: {fileID: 7482583556751708634}
   - component: {fileID: 1857293715078880145}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,8 +515,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 4
   m_Sprite: {fileID: 3978973150445532872, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -547,8 +547,8 @@ MonoBehaviour:
   - {fileID: 4075461945432280045}
   - {fileID: 2872737268876822732}
   m_Bounds:
-    m_Center: {x: 0.9178159, y: -7.767455, z: 0}
-    m_Extent: {x: 0.3450091, y: 1.2249973, z: 0}
+    m_Center: {x: 0.9178158, y: -7.767455, z: 0}
+    m_Extent: {x: 0.3450091, y: 1.2249975, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1853120724546012437
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2872737268876822732}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4526464701044077914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7067481801833049535}
   - component: {fileID: 4035126106284435481}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -659,6 +659,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 625
   canShoot: 0
+  shooting: 0
+  bagsInstantiated: 0
+  bagsInstantiating: 0
   GunHolder: {fileID: 4526464701044077914}
   shootPoint: {fileID: 6893876688588182200}
   bag: {fileID: 3866114603615866371, guid: 03656cec06bdc2d448004a751883fc6e, type: 3}
@@ -672,7 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9039230495492547883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3857267158545486294}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmL_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8700489323505329060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9128548579122303009}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Solvers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -799,7 +802,7 @@ GameObject:
   - component: {fileID: 7167877844481134076}
   - component: {fileID: 5196265703807625415}
   - component: {fileID: 8382523899705355958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,8 +860,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 4125835305817160349, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -902,7 +905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3925951977195405530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6893876688588182200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -962,7 +965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5669652726189501303}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8469698663888923694}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 314552964125338926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegL_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1060,7 +1063,7 @@ GameObject:
   - component: {fileID: 7841616810965281877}
   - component: {fileID: 4777058770913883178}
   - component: {fileID: 7490574550261612011}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EyesBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,8 +1121,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 8
   m_Sprite: {fileID: -437335247937424340, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -1163,7 +1166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4749867448474824870}
   - component: {fileID: 2801000966279720175}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegL_Solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4075461945432280045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7239494950956260179}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegR_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1291,7 @@ GameObject:
   - component: {fileID: 78957849077479216}
   - component: {fileID: 4785590236608801850}
   - component: {fileID: 3284807539525801208}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,8 +1349,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 7
   m_Sprite: {fileID: 6290045766912353031, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -1378,7 +1381,7 @@ MonoBehaviour:
   - {fileID: 8469698663888923694}
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.18118155, y: -18.972483, z: 0}
+    m_Center: {x: -0.18118161, y: -18.972483, z: 0}
     m_Extent: {x: 0.355995, y: 0.26987457, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1391,7 +1394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5360453390203675804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmR_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1422,7 +1425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8970043222557091001}
   - component: {fileID: 1995703906482589197}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmR_Solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5323924768638664994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1520,7 +1523,7 @@ GameObject:
   - component: {fileID: 811105840115438332}
   - component: {fileID: 2677831481394250846}
   - component: {fileID: 2249708974949167738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1536,7 +1539,7 @@ Transform:
   m_GameObject: {fileID: 7314640821517876219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.05, y: 0.035, z: -14.5}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.425, y: 0.425, z: 1}
   m_Children:
   - {fileID: 7314640822670992411}
   - {fileID: 3925951977195405530}
@@ -1597,6 +1600,7 @@ MonoBehaviour:
   Data: {fileID: 11400000, guid: 815adc560da87754e96c995ce53441b6, type: 2}
   shootComp: {fileID: 0}
   playerGraphics: {fileID: 7314640822670992420}
+  targetSpeed: 0
   _groundCheckPoint: {fileID: 3925951977195405530}
   _groundCheckSize: {x: 0.49, y: 0.03}
   _groundLayer:
@@ -1657,7 +1661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7314640822670992411}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Models
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1701,7 +1705,7 @@ GameObject:
   - component: {fileID: 47056657504813405}
   - component: {fileID: 7672782415300700429}
   - component: {fileID: 1977822404070750598}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EyeR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,8 +1763,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 10
   m_Sprite: {fileID: -1016186594441233800, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -1790,8 +1794,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -1.9471716, y: -21.102388, z: 0}
-    m_Extent: {x: 0.17945492, y: 0.16950989, z: 0}
+    m_Center: {x: -1.9471717, y: -21.102388, z: 0}
+    m_Extent: {x: 0.17945498, y: 0.16950989, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &7770621698651635848
@@ -1804,7 +1808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3981027918196679333}
   - component: {fileID: 4924666493165596823}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LegR_Solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,7 +1871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6611708208491872391}
   - component: {fileID: 5033857260814063860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmL_Solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1931,7 +1935,7 @@ GameObject:
   - component: {fileID: 9053531792801411381}
   - component: {fileID: 7953988011763047137}
   - component: {fileID: 4406949470841232193}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,8 +1993,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 3
   m_Sprite: {fileID: 8893150529627562227, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -2036,7 +2040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970809093758707463}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bone_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2069,7 +2073,7 @@ GameObject:
   - component: {fileID: 8965952151962132205}
   - component: {fileID: 6362567325375761938}
   - component: {fileID: 9129994439842323252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArmL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,8 +2131,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -525760289
+  m_SortingLayer: -1
   m_SortingOrder: 6
   m_Sprite: {fileID: 4301361986054836862, guid: c04a1af700a62ba4eb840643c59d9e9a,
     type: 3}
@@ -2159,7 +2163,7 @@ MonoBehaviour:
   - {fileID: 970809093758707463}
   - {fileID: 5323924768638664994}
   m_Bounds:
-    m_Center: {x: 4.860805, y: -18.128744, z: 0}
+    m_Center: {x: 4.860805, y: -18.128742, z: 0}
     m_Extent: {x: 1.2249656, y: 0.2391491, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

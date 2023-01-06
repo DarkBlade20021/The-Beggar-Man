@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: ad407aa7ca6176c4dbbc4c2249b2df6c
 ScriptedImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7717450174661515925
+    second: Foreground
+  - first:
+      213: -360967855649407758
+    second: Ground
+  - first:
+      213: 5330907176485755315
+    second: Grass
+  - first:
+      213: 1685672896835508257
+    second: Midground
+  - first:
+      213: -7862715138806570537
+    second: Background
+  - first:
+      213: -5885212068308959103
+    second: Sky
+  - first:
+      213: -7717450174661515925
+    second: Grass
+  - first:
+      213: -360967855649407758
+    second: Midground
+  - first:
+      213: 5330907176485755315
+    second: Background
+  - first:
+      213: 1685672896835508257
+    second: Foreground
+  - first:
+      213: -7862715138806570537
+    second: VeryForeground
+  - first:
+      213: -5885212068308959103
+    second: Ground
+  - first:
+      213: 8850427228939260222
+    second: Sky
+  - first:
+      213: 899260084969851661
+    second: InMidground
+  - first:
+      213: -4605900478809934598
+    second: InBackMidground
   externalObjects: {}
   serializedVersion: 2
   userData: 
@@ -91,18 +136,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Foreground
+  - name: Grass
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 10
-      y: 3172
-      width: 1911
-      height: 312
-    spriteID: 039d681096753994882b3dc8c4a938ed
+      x: 4
+      y: 3576
+      width: 1920
+      height: 520
+    spriteID: b65268774fb16e490800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -112,7 +157,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 3172}
+    uvTransform: {x: 4, y: 3576}
   - name: Midground
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -120,11 +165,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 7
-      y: 2020
-      width: 1915
-      height: 739
-    spriteID: c7c8bd631a80a444983237988bfa0e05
+      x: 4
+      y: 2801
+      width: 1920
+      height: 768
+    spriteID: 2fcbea4d5a59dfaf0800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -134,7 +179,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 2020}
+    uvTransform: {x: 4, y: 2801}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -142,11 +187,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 7
-      y: 1092
-      width: 1913
-      height: 920
-    spriteID: 7e20495a5abd9ea4b8efebbfc393f7c3
+      x: 4
+      y: 984
+      width: 1920
+      height: 921
+    spriteID: 3b9930925df2bf940800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -156,7 +201,73 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 1092}
+    uvTransform: {x: 4, y: 984}
+  - name: Foreground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 1402
+      width: 1920
+      height: 327
+    spriteID: 128526f8196b46710800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1932, y: 1402}
+  - name: VeryForeground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 1057
+      width: 1920
+      height: 339
+    spriteID: 7d1295d5d3602e290800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1932, y: 1057}
+  - name: Ground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 665
+      width: 1920
+      height: 384
+    spriteID: 1804a981ec6835ea0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1932, y: 665}
   - name: Sky
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -164,11 +275,11 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 6
+      x: 4
       y: 4
-      width: 1914
-      height: 1080
-    spriteID: 4864009ace452b9498efcbeb6b03e765
+      width: 1920
+      height: 973
+    spriteID: e319e535ca803da70800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -179,18 +290,18 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-  - name: Ground
+  - name: InMidground
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 2767
+      x: 1932
+      y: 4
       width: 1920
-      height: 397
-    spriteID: f8696fa2813214f40ab2d6befacb6e54
+      height: 653
+    spriteID: d0bc0556840da7c00800000000000000
     internalID: 0
     spriteBone: []
     spriteOutline: []
@@ -200,14 +311,36 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 2767}
+    uvTransform: {x: 1932, y: 4}
+  - name: InBackMidground
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1913
+      width: 1920
+      height: 878
+    spriteID: af47bb9eaed8410c0800000000000000
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 1913}
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
     maxTextureSize: 16384
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -216,9 +349,9 @@ ScriptedImporter:
   - name: Standalone
     overridden: 0
     maxTextureSize: 16384
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -227,9 +360,9 @@ ScriptedImporter:
   - name: Android
     overridden: 0
     maxTextureSize: 16384
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -239,41 +372,69 @@ ScriptedImporter:
   documentPivot: {x: 0, y: 0}
   documentAlignment: 7
   importHiddenLayers: 0
-  importedTextureWidth: 2048
+  importedTextureWidth: 4096
   importedTextureHeight: 4096
   documentSize: {x: 1920, y: 1080}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
-  textureActualWidth: 2048
+  textureActualWidth: 4096
   textureActualHeight: 4096
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: VeryForeground
+    spriteName: VeryForeground
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2091c7431f8d42843a1efa1a45904bb4
+    layerID: 86
+    mosaicPosition: {x: 1932, y: 1057}
   - name: Foreground
-    spriteName: Foreground
+    spriteName: Foreground_1
     isGroup: 0
     parentIndex: -1
-    spriteID: 039d681096753994882b3dc8c4a938ed
-    layerID: 68
-    mosaicPosition: {x: 4, y: 3172}
+    spriteID: 78722975f5c5dfb4ba9fcffb8871d9f9
+    layerID: 85
+    mosaicPosition: {x: 1932, y: 1402}
   - name: Ground
-    spriteName: Ground
+    spriteName: Ground_1
     isGroup: 0
     parentIndex: -1
-    spriteID: f8696fa2813214f40ab2d6befacb6e54
-    layerID: 84
-    mosaicPosition: {x: 4, y: 2767}
+    spriteID: 5ed33f7aa2ada8747ab5aff30c23874b
+    layerID: 98
+    mosaicPosition: {x: 1932, y: 665}
+  - name: Grass
+    spriteName: Grass_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ed78239213d982848a0679fcf85fd345
+    layerID: 97
+    mosaicPosition: {x: 4, y: 3577}
+  - name: InMidground
+    spriteName: InMidground
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 036a670c1bbdc90498852db433e47456
+    layerID: 88
+    mosaicPosition: {x: 1932, y: 4}
   - name: Midground
     spriteName: Midground
     isGroup: 0
     parentIndex: -1
     spriteID: c7c8bd631a80a444983237988bfa0e05
     layerID: 59
-    mosaicPosition: {x: 4, y: 2020}
+    mosaicPosition: {x: 4, y: 2025}
+  - name: InBackMidground
+    spriteName: InBackMidground
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3858c0e89a1993d4184712d576f84964
+    layerID: 87
+    mosaicPosition: {x: 4, y: 1913}
   - name: Background
     spriteName: Background
     isGroup: 0

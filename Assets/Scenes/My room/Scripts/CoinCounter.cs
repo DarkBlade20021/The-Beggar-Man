@@ -79,19 +79,19 @@ public class CoinCounter : MonoBehaviour
 
     void AddCoins(int addedCoins)
     {
-        additionnedCoins = addedCoins;
-        if (Input.GetMouseButtonDown(0) && Coins <= additionnedCoins)
-            StartCoroutine(AddCoinsRoutine());
+        additionnedCoins = addedCoins + Coins;
+        if (Input.GetMouseButtonDown(0) && additionnedCoins <= maxCoins)
+            StartCoroutine(AddCoinsRoutine(addedCoins));
     }
 
-    IEnumerator AddCoinsRoutine()
+    IEnumerator AddCoinsRoutine(int addedCoins)
     {
         GameObject coinAdditionnerText = Instantiate(coinAdditionnerObj, coinChangement);
-        coinAdditionnerText.GetComponent<TMP_Text>().text = "+" + additionnedCoins;
-        Coins += additionnedCoins;
+        coinAdditionnerText.GetComponent<TMP_Text>().text = "+" + addedCoins;
+        Coins = additionnedCoins;
         yield return new WaitForSeconds(waitWhat);
         Destroy(coinAdditionnerText);
-        CoinsUI += additionnedCoins;
+        CoinsUI = additionnedCoins;
     }
 
 }

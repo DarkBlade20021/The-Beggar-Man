@@ -80,6 +80,7 @@ public class MyPlayer : MonoBehaviour
 	{
 		if(!IsFrozen)
 		{
+
 			#region TIMERS
 			LastOnGroundTime -= Time.deltaTime;
 			#endregion
@@ -88,15 +89,20 @@ public class MyPlayer : MonoBehaviour
 			_moveInput.x = Input.GetAxisRaw("Horizontal");
 			_moveInput.y = Input.GetAxisRaw("Vertical");
 
-			if (_moveInput.x != 0)
+			if(_moveInput.x == 0)
+				anim.SetBool("isRunning", false);
+			else
+            {
 				CheckDirectionToFace(_moveInput.x > 0);
+				anim.SetBool("isRunning", true);
+			}
 
-			if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.J))
+			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				OnJumpInput();
 			}
 
-			if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.J))
+			if (Input.GetKeyUp(KeyCode.Space))
 			{
 				OnJumpUpInput();
 			}
@@ -225,33 +231,31 @@ public class MyPlayer : MonoBehaviour
 	{
 
         #region Speed Levels
-        float speedCheckerL1 = CoinCounter.Instance.maxCoins / 4;     //Level 1 out of 4
-		float speedCheckerL2 = CoinCounter.Instance.maxCoins * 2 / 4; //Level 2 out of 4
-		float speedCheckerL3 = CoinCounter.Instance.maxCoins * 3 / 4; //Level 3 out of 4
-		float speedCheckerL4 = CoinCounter.Instance.maxCoins;         //Level 4 out of 4
+        float speedCheckerL1 = CoinCounter.Instance.maxCoins / 2;     //Level 1 out of 2
+		float speedCheckerL2 = CoinCounter.Instance.maxCoins; //Level 2 out of 2
 
-		//Check Level 1 out of 4
+		//Check Level 1 out of 2
 		if(CoinCounter.Instance.Coins <= speedCheckerL1)
 			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount);
-		//Check Level 2 out of 4
+		//Check Level 2 out of 2
 		else if(CoinCounter.Instance.Coins <= speedCheckerL2)
-			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) * 3 / 4;
-		//Check Level 3 out of 4
-		else if(CoinCounter.Instance.Coins <= speedCheckerL3)
-			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) * 2 / 4;
-		//Check Level 4 out of 4
-		else if(CoinCounter.Instance.Coins <= speedCheckerL4)
-			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) / 4;
+			targetSpeed = Mathf.Lerp(RB.velocity.x, _moveInput.x * Data.runMaxSpeed, lerpAmount) * 2.5f / 4;
         #endregion
 
         if(IsFrozen)
 			targetSpeed = 0;
 
-        #region Animation Checks
+		#region Animation Checks
 		if(targetSpeed == 0 || CollisionWithWall)
-			anim.SetBool("isRunning", false);
+		{
+			anim.SetFloat("speed", 0f);
+			anim.SetTrigger("run");
+		}
 		else if(targetSpeed != 0 || !CollisionWithWall)
-			anim.SetBool("isRunning", true);
+		{
+			anim.SetFloat("speed", Mathf.Abs(targetSpeed));
+			anim.SetTrigger("run");
+		}
         #endregion
 
         #region Calculate AccelRate
@@ -351,19 +355,33 @@ public class MyPlayer : MonoBehaviour
 
 	public void SetThrowing()
     {
-		anim.SetBool("isThrowing", true);
+		anim.SetBool("isThrowing", false);
 		anim.SetTrigger("throw");
+		anim.SetBool("isThrowing", true);
+		shootComp.shooting = true;
+		Debug.Log("2: Doing The Animation...");
 	}
 
 	public void InstantiateObject()
     {
-		shootComp.canShoot = true;
+		Debug.Log("3: Attempting to Instantiate the Object...");
+		if(!shootComp.canShoot)
+		{
+			Debug.Log("4: Going to Instantiate the Object...");
+			anim.SetBool("throwAction", true);
+			shootComp.InstantiateBag();
+			Debug.Log("6: The Object Should Be Instantiated...");
+		}
     }
 
 	public void SetNotThrowing()
     {
 		anim.SetBool("isThrowing", false);
+		anim.SetBool("throwAction", false);
 		shootComp.canShoot = false;
+		shootComp.shooting = false;
+		shootComp.bagsInstantiating = 0;
+		Debug.Log("7 and Last:Everything is Done!");
 	}
 
 	public void SetFrozen()
