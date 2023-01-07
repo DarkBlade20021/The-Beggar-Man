@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    /*@TODO: Add stealing, you got he animations so don't worry about them.
+     * Fix the jumping animations
+     * Add more levels
+     * Action Doors w/ Pressure Plates, Buttons
+    */
+
     [Header("Properties")]
     const string L = "left";
     const string R = "right";
@@ -125,9 +131,6 @@ public class EnemyPatrol : MonoBehaviour
         else
             val = false;
 
-        Debug.DrawLine(castPos.position, platformEdge1.position, Color.blue);
-        Debug.DrawLine(castPos.position, platformEdge2.position, Color.blue);
-
         return val;
     }
 
@@ -149,8 +152,6 @@ public class EnemyPatrol : MonoBehaviour
         else
             val = false;
 
-        Debug.DrawLine(castPos.position, targetPos, Color.red);
-
         return val;
     }
 
@@ -166,8 +167,6 @@ public class EnemyPatrol : MonoBehaviour
             val = false;
         else
             val = true;
-
-        Debug.DrawLine(castPos.position, targetPos, Color.green);
 
         return val;
     }
