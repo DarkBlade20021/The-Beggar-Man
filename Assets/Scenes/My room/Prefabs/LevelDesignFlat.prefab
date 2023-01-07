@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 743632183}
   m_Layer: 8
   m_Name: GrassObj
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,4 +196,5 @@ PolygonCollider2D:
     - - {x: -9.599999, y: -1.985}
       - {x: 9.599999, y: -1.985}
       - {x: 9.599999, y: 1.865}
-      - {x: -9.599999, y: 1.865}
+      - {x: -9.6, y: 1.8449802}
+      - {x: -9.6, y: 1.8449801}

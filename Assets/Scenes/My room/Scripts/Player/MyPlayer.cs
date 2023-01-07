@@ -359,18 +359,14 @@ public class MyPlayer : MonoBehaviour
 		anim.SetTrigger("throw");
 		anim.SetBool("isThrowing", true);
 		shootComp.shooting = true;
-		Debug.Log("2: Doing The Animation...");
 	}
 
 	public void InstantiateObject()
     {
-		Debug.Log("3: Attempting to Instantiate the Object...");
 		if(!shootComp.canShoot)
 		{
-			Debug.Log("4: Going to Instantiate the Object...");
 			anim.SetBool("throwAction", true);
 			shootComp.InstantiateBag();
-			Debug.Log("6: The Object Should Be Instantiated...");
 		}
     }
 
@@ -381,7 +377,6 @@ public class MyPlayer : MonoBehaviour
 		shootComp.canShoot = false;
 		shootComp.shooting = false;
 		shootComp.bagsInstantiating = 0;
-		Debug.Log("7 and Last:Everything is Done!");
 	}
 
 	public void SetFrozen()
