@@ -23,16 +23,12 @@ public class Shoot : MonoBehaviour
     void FixedUpdate()
     {
         if(!canShoot)
-        {
             bagsInstantiated = 0;
-            Debug.Log("Checker: Reseted the Counter!");
-        }
         if (Input.GetMouseButtonDown(1) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
         {
             #region ANIMATION SOLVERS
             MyPlayer.Instance.anim.SetBool("isThrowing", false);
             #endregion
-            Debug.Log("1: The Button Got Pressed...");
             ShootBag();
             bagsInstantiating++;
         }
@@ -48,7 +44,6 @@ public class Shoot : MonoBehaviour
         else
             rb.AddForce(new Vector2(-direction.x, direction.y) * shootRange);
         bagsInstantiated++;
-        Debug.Log("5: The Object Instantiated!");
     }
 
     void ShootBag()

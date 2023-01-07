@@ -27,8 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 623.2789, y: 253.54422, z: -192.89528}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1029530776993398608}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,88 +52,3 @@ MonoBehaviour:
   maxCoins: 1000
   CoinsInBag: 50
   waitWhat: 0.5
---- !u!1001 &5018779571663727426
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 968707328606957598}
-    m_Modifications:
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826505430546422899, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_Name
-      value: AINavigation
-      objectReference: {fileID: 0}
-    - target: {fileID: 5826505430546422899, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137882807317291558, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-        type: 3}
-      propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAIIew8IO7ncQIAACgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK54Uyxuaxt10gZA9JqJCtXHwR1hirkCWXJAdIin/fkWxjLzkhuufR0xr5i3BpSkit0hvN2ZNiQH4OiDuTH4OOfIQzPSi545/QxrxzZnMXRH3MK7VcIT52aUYVYDVPf8mDcMEBgpXkmdLFmh1gqYw1CGdUGEBKK+uyJUJfA3LGn+HCpVzwFM7c6RNPi2BwxWMK0oLuQtvANmw4jkaxj6xkKmhRAnOyu4R4NoqbnFkTKXGmJigYhY5NlRDcNJqIvZR+5ld6cRMzTnE+LyIYBRNEcuCH3Dq5/dyXLDNgG22aXlZco1N1UfJb1fYV1BxrcR9UVK5NGE+9qrro0zd+OPZ0plXx2PYdB66HzXl6RJEpNbbnbx9eddrH3qMTFUe6F/Ceg3xWG60qyZC0unKplYFw1f29jbbMIT12eC31DqzK77cUjibzaDyPZ4v1MJjdrmxwvXorzkvBi733NaqBnVDee78QoPGi/qB6vy6mqYuok/TXwBs99PeqIR64NhapZmTptO5VpV0oWXsD3WiVXSotwcPNBCVIKuxli2Xs/X3ecb22d8wDdS+oad5w7cO4S/FwFx8Ed9RWnW43Z3J1egKTv1RWcAmdaEc8o09LJWW9bn1P2rRdpTOa9tIOFWf/7xmhaRBNFyHbB2wypXE0DGfzOYTRnIVzFmdBRPwicolzUrGthTb24K3JrrjEpWs/LIONpqVffabpacM/C9WznMtM7VINIF/qCjfhoLEJPlK2ZhwN2oG1XPr7Jl8JESo9AktuhRI/6fpsNU26Kgkp+YeyDknI0n9JEuLg22JvNXxwOLnmbbEruf4DUEsDBBQAAAgIAAAIIezbTFfnbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSYrKBiZmlUUqSQYqxWaKpia6RuYVFqpGJRYqRRYppmoGJUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIew8IO7ncQIAACgFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIezbTFfnbQAAAHgAAAAJACQAAAAAAAAAAAAAAL4CAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAdgMAAAAA
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 33daee0a5d6e8104bb6d2aab696d2a3a, type: 3}
---- !u!4 &1029530776993398608 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5471848977878291474, guid: 33daee0a5d6e8104bb6d2aab696d2a3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5018779571663727426}
-  m_PrefabAsset: {fileID: 0}
