@@ -22,6 +22,9 @@ public class EnemyJumpPad : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
+        {
             collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            collision.GetComponent<Animator>().SetTrigger("jump");
+        }
     }
 }

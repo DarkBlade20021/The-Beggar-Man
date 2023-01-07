@@ -26,6 +26,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header("References")]
     public GameObject graphics;
+    public Animator anim;
     public Rigidbody2D rb;
     public EnemyHealth health;
 
@@ -40,6 +41,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void FixedUpdate()
     {
+        anim.SetBool("isFollowing", isFollowing);
         if(!health.isDead && !isFollowing)
         {
             float vX = speed;
