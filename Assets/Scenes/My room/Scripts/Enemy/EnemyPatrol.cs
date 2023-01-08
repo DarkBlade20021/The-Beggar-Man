@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyPatrol : MonoBehaviour
 {
     /*@TODO: Add stealing, you got he animations so don't worry about them.
-     * Fix the jumping animations
      * Add more levels
      * Action Doors w/ Pressure Plates, Buttons
     */
@@ -22,6 +21,7 @@ public class EnemyPatrol : MonoBehaviour
     public LayerMask playerLayer;
 
     public float speed;
+    public float chaseSpeed;
     public bool isFollowing;
 
     string facingDirection;
@@ -70,12 +70,12 @@ public class EnemyPatrol : MonoBehaviour
         }
         if(!health.isDead && isFollowing)
         {
-            float vX = speed;
+            float vX = chaseSpeed;
 
             if(facingDirection == L)
-                vX = -speed + 0.5f;
+                vX = -chaseSpeed;
             else if(facingDirection == R)
-                vX = speed + 0.5f;
+                vX = chaseSpeed;
 
             rb.velocity = new Vector2(vX, rb.velocity.y);
 

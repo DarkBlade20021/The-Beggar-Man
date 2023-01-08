@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427124450}
   - component: {fileID: 1427124451}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrassObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 4170388045608244766}
   - component: {fileID: 4170388045608244755}
   - component: {fileID: 4170388045608244764}
+  - component: {fileID: 171601080}
   m_Layer: 8
   m_Name: LevelDesignHole
   m_TagString: Ground
@@ -110,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 4170388045608244767}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 19.18, y: -2.25, z: 14.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1427124450}
   m_Father: {fileID: 0}
@@ -289,3 +290,21 @@ PolygonCollider2D:
       - {x: 9.599999, y: -1.985}
       - {x: 9.599999, y: 1.865}
       - {x: 9.45, y: 1.795}
+--- !u!114 &171601080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170388045608244767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13905a11d2b2eb749bca3cf1824f16b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressurePlates:
+  - {fileID: 0}
+  time: 0.2
+  newPos: {fileID: 0}
+  oldPos: {fileID: 0}
+  pressurePlatesOpenned: 0
