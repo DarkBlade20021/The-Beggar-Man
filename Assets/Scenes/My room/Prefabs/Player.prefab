@@ -1524,6 +1524,7 @@ GameObject:
   - component: {fileID: 811105840115438332}
   - component: {fileID: 2677831481394250846}
   - component: {fileID: 2249708974949167738}
+  - component: {fileID: 1725515843}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1602,6 +1603,7 @@ MonoBehaviour:
   shootComp: {fileID: 0}
   playerGraphics: {fileID: 7314640822670992420}
   targetSpeed: 0
+  _moveInput: {x: 0, y: 0}
   _groundCheckPoint: {fileID: 3925951977195405530}
   _groundCheckSize: {x: 0.49, y: 0.03}
   _groundLayer:
@@ -1653,6 +1655,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1725515843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7314640821517876219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a7801a97c0e606499cf5c2328c32ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stamina: 0
+  staminaRegain: 10
+  maxStamina: 100
+  isKnockedOut: 0
+  regained: 1
+  isCollisionned: 0
+  staminaText: {fileID: 0}
 --- !u!1 &7314640822670992420
 GameObject:
   m_ObjectHideFlags: 0

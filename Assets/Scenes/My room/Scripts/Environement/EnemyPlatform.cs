@@ -16,8 +16,6 @@ public class EnemyPlatform : MonoBehaviour
             transform.position = Vector2.Lerp(transform.position, newPos.position, time);
         else
             transform.position = Vector2.Lerp(transform.position, oldPos.position, time);
-
-        Debug.Log("helo");
     }
 
     private void OnTriggerStay2D(Collider2D collision)

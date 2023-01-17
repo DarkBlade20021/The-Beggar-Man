@@ -8,7 +8,7 @@ public class Door : MonoBehaviour
     public float time;
     public Transform newPos;
     public Transform oldPos;
-    [HideInInspector] public int pressurePlatesOpenned = 0;
+    public int pressurePlatesOpenned = 0;
     
     void Start()
     {

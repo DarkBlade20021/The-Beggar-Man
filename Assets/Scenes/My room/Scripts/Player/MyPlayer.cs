@@ -34,7 +34,7 @@ public class MyPlayer : MonoBehaviour
 	#endregion
 
 	#region INPUT PARAMETERS
-	private Vector2 _moveInput;
+	public Vector2 _moveInput;
 
 	public float LastPressedJumpTime { get; private set; }
 	#endregion
@@ -253,7 +253,7 @@ public class MyPlayer : MonoBehaviour
 		}
 		else if(targetSpeed != 0 || !CollisionWithWall)
 		{
-			anim.SetFloat("speed", Mathf.Abs(targetSpeed));
+			anim.SetFloat("speed", Mathf.Lerp(0, 1, Data.runLerpAmount));
 			anim.SetTrigger("run");
 		}
         #endregion

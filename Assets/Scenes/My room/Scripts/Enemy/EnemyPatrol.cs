@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    /*@TODO: Add stealing, you got he animations so don't worry about them.
-     * Add more levels
-     * Action Doors w/ Pressure Plates, Buttons
-    */
 
     [Header("Properties")]
     const string L = "left";
@@ -23,6 +19,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     public float chaseSpeed;
     public bool isFollowing;
+    public bool stopFollowing;
 
     string facingDirection;
 
@@ -83,6 +80,23 @@ public class EnemyPatrol : MonoBehaviour
                 ChangeFacingDirection(R);
             else if(playerTarget.position.x < transform.position.x && facingDirection == R)
                 ChangeFacingDirection(L);
+        }
+        if(!health.isDead && stopFollowing)
+        {
+            float vX = chaseSpeed;
+
+            if(facingDirection == L)
+                vX = chaseSpeed;
+            else if(facingDirection == R)
+                vX = -chaseSpeed;
+
+            rb.velocity = new Vector2(vX, rb.velocity.y);
+
+            if(playerTarget.position.x < transform.position.x && facingDirection == L)
+                ChangeFacingDirection(R);
+            else if(playerTarget.position.x > transform.position.x && facingDirection == R)
+                ChangeFacingDirection(L);
+            isFollowing = true;
         }
     }
 
