@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(health + " / " + maxHealth + " HP");
+        //print(health + " / " + maxHealth + " HP");
         if(health <= 0 && !isDead)
             isDead = enemy.Die(isDead);
     }

@@ -78,6 +78,10 @@ public class MyPlayer : MonoBehaviour
 
 	private void Update()
 	{
+		if(DialogueManager.Instance.dialogueIsPlaying)
+			SetFrozen();
+		else
+			SetUnfrozen();
 		if(!IsFrozen)
 		{
 
