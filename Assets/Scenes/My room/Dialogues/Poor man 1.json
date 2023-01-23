@@ -1,0 +1,1 @@
+﻿{"inkVersion":20,"root":[[{"->":"main"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"main":["^Hello Stranger, Would you like to give a poor man some of your money please?","\n","^You don't have anything to say huh? Interesting...","\n","end",{"#f":1}],"global decl":["ev","str","^null","/str",{"VAR=":"decided"},"/ev","end",null],"#f":1}],"listDefs":{}}

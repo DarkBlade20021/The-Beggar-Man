@@ -29,7 +29,6 @@ public class PressurePlate : MonoBehaviour
         if(other.gameObject.tag == "Coin Bag" && !isPushed || other.gameObject.tag == "Player" && !isPushed)
         {
             isPushed = true;
-            Debug.Log("I'm pushed");
             door.pressurePlatesOpenned++;
         }
     }
@@ -38,7 +37,6 @@ public class PressurePlate : MonoBehaviour
         if(other.gameObject.tag == "Coin Bag" && isPushed || other.gameObject.tag == "Player" && isPushed)
         {
             isPushed = false;
-            Debug.Log("I'm not pushed");
             door.pressurePlatesOpenned--;
         }
     }

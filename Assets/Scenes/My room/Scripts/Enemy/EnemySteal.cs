@@ -6,6 +6,7 @@ public class EnemySteal : MonoBehaviour
 {
     public EnemyHealth enemy;
     public EnemyPatrol patrol;
+    public bool knowsPlayer;
     public string playerTag;
     public float staminaDamage;
     private PlayerStamina player;
@@ -14,17 +15,21 @@ public class EnemySteal : MonoBehaviour
     {
         if(enemy.isDead)
             Destroy(this);
-        if(player.isKnockedOut)
-            patrol.stopFollowing = true;
+        if(knowsPlayer)
+        {
+            if(player.isKnockedOut)
+                patrol.stopFollowing = true;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == playerTag)
+        if(collision.gameObject.tag == playerTag && !knowsPlayer)
         {
             player = collision.GetComponent<PlayerStamina>();
             if(!player.isCollisionned && player.stamina <= player.maxStamina && player.stamina >= player.staminaRegain)
                 player.TakeDamage(staminaDamage);
+            knowsPlayer = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
