@@ -20,10 +20,13 @@ public class Drop : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && canDrop)
-            InstantiateBag();
-        if(Input.GetKeyUp(KeyCode.Q) && !canDrop)
-            canDrop = true;
+        if(!MyPlayer.Instance.IsFrozen)
+        {
+            if(Input.GetKeyDown(KeyCode.Q) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && canDrop)
+                InstantiateBag();
+            if(Input.GetKeyUp(KeyCode.Q) && !canDrop)
+                canDrop = true;
+        }
     }
 
     public void InstantiateBag()

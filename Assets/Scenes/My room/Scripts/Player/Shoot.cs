@@ -22,15 +22,18 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(!canShoot)
-            bagsInstantiated = 0;
-        if (Input.GetMouseButtonDown(0) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
+        if(!MyPlayer.Instance.IsFrozen)
         {
-            #region ANIMATION SOLVERS
-            MyPlayer.Instance.anim.SetBool("isThrowing", false);
-            #endregion
-            ShootBag();
-            bagsInstantiating++;
+            if(!canShoot)
+                bagsInstantiated = 0;
+            if(Input.GetMouseButtonDown(0) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
+            {
+                #region ANIMATION SOLVERS
+                MyPlayer.Instance.anim.SetBool("isThrowing", false);
+                #endregion
+                ShootBag();
+                bagsInstantiating++;
+            }
         }
     }
 
