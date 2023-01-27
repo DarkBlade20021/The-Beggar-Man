@@ -84,6 +84,8 @@ public class MyPlayer : MonoBehaviour
 			SetFrozen(true);
 		else
 			SetFrozen(false);
+		if(IsFrozen)
+			RB.velocity = new Vector2(0, RB.velocity.y);
 		if(!IsFrozen)
 		{
 
