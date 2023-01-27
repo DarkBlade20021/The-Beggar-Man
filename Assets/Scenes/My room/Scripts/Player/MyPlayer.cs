@@ -11,6 +11,7 @@ public class MyPlayer : MonoBehaviour
 	public Rigidbody2D RB { get; private set; }
 	public Animator anim { get; private set; }
 	public Shoot shootComp;
+	public Drop dropComp;
 	public GameObject playerGraphics;
 	#endregion
 
@@ -67,6 +68,7 @@ public class MyPlayer : MonoBehaviour
 		RB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		shootComp = GetComponentInChildren<Shoot>();
+		dropComp = GetComponentInChildren<Drop>();
 	}
 
 	private void Start()
@@ -79,9 +81,9 @@ public class MyPlayer : MonoBehaviour
 	private void Update()
 	{
 		if(DialogueManager.Instance.dialogueIsPlaying)
-			SetFrozen();
+			SetFrozen(true);
 		else
-			SetUnfrozen();
+			SetFrozen(false);
 		if(!IsFrozen)
 		{
 
@@ -190,7 +192,8 @@ public class MyPlayer : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		Run(1);
+		if(!IsFrozen)
+			Run(1);
 	}
 
 	#region INPUT CALLBACKS
@@ -382,23 +385,14 @@ public class MyPlayer : MonoBehaviour
 		shootComp.shooting = false;
 		shootComp.bagsInstantiating = 0;
 	}
-
-	public void SetFrozen()
+	public void SetFrozen(bool state)
     {
-		IsFrozen = true;
-    }
-	public void SetUnfrozen()
-    {
-		IsFrozen = false;
+		IsFrozen = state;
     }
 
-	public void SetCollisionned()
+	public void SetCollision(bool state)
 	{
-		CollisionWithWall = true;
-	}
-	public void SetUncollisionned()
-	{
-		CollisionWithWall = false;
+		CollisionWithWall = state;
 	}
 
 	#endregion

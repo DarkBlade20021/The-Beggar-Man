@@ -80,7 +80,7 @@ public class CoinCounter : MonoBehaviour
     void AddCoins(int addedCoins)
     {
         additionnedCoins = addedCoins + Coins;
-        if (Input.GetMouseButtonDown(0) && additionnedCoins <= maxCoins)
+        if (Input.GetMouseButtonDown(1) && additionnedCoins <= maxCoins)
             StartCoroutine(AddCoinsRoutine(addedCoins));
     }
 

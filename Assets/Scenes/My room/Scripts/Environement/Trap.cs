@@ -14,11 +14,12 @@ public class Trap : MonoBehaviour
 
     IEnumerator StealRoutine()
     {
-        MyPlayer.Instance.SetFrozen();
+        MyPlayer.Instance.SetFrozen(true);
+        Debug.Log(MyPlayer.Instance.IsFrozen);
         trapWarning.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
         CoinCounter.Instance.SubtractCoinsPercentage(Random.Range(10, 30));
-        MyPlayer.Instance.SetUnfrozen();
+        MyPlayer.Instance.SetFrozen(false);
         trapWarning.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
     }

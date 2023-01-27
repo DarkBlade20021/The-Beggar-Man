@@ -37,7 +37,7 @@ public class PlayerStamina : MonoBehaviour
             if(isKnockedOut)
             {
                 StartCoroutine(RegainStamina());
-                player.SetFrozen();
+                player.SetFrozen(true);
             }
             else if(player._moveInput.x == 0)
                 StartCoroutine(RegainStamina());
@@ -48,7 +48,7 @@ public class PlayerStamina : MonoBehaviour
             if(isKnockedOut)
             {
                 isKnockedOut = false;
-                player.SetUnfrozen();
+                player.SetFrozen(false);
             }
             regained = true;
         }

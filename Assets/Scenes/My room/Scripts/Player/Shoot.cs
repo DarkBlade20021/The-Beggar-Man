@@ -24,7 +24,7 @@ public class Shoot : MonoBehaviour
     {
         if(!canShoot)
             bagsInstantiated = 0;
-        if (Input.GetMouseButtonDown(1) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
+        if (Input.GetMouseButtonDown(0) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
         {
             #region ANIMATION SOLVERS
             MyPlayer.Instance.anim.SetBool("isThrowing", false);

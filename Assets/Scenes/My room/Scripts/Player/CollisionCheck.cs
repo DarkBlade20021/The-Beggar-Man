@@ -7,13 +7,13 @@ public class CollisionCheck : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 8)
-            MyPlayer.Instance.SetCollisionned();
+            MyPlayer.Instance.SetCollision(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 8)
-            MyPlayer.Instance.SetUncollisionned();
+            MyPlayer.Instance.SetCollision(false);
     }
 
 }

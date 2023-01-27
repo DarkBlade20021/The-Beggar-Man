@@ -25,12 +25,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019804505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.46, z: 0}
-  m_LocalScale: {x: 1, y: 1.25, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1, y: -1.34, z: 0}
+  m_LocalScale: {x: 2, y: 2.4999998, z: 1}
   m_Children: []
-  m_Father: {fileID: 7314640821517876223}
-  m_RootOrder: 3
+  m_Father: {fileID: 7314640822670992411}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1019804508
 BoxCollider2D:
@@ -172,8 +172,8 @@ MonoBehaviour:
   - {fileID: 8269288904995888386}
   - {fileID: 5669652726189501303}
   m_Bounds:
-    m_Center: {x: -1.6173899, y: -7.7524576, z: 0}
-    m_Extent: {x: 0.3497836, y: 1.2299998, z: 0}
+    m_Center: {x: -1.6173933, y: -7.7524567, z: 0}
+    m_Extent: {x: 0.3497911, y: 1.2299993, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &270822552130992642
@@ -276,8 +276,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.3571812, y: -21.552456, z: 0}
-    m_Extent: {x: 0.749985, y: 0.7199898, z: 0}
+    m_Center: {x: -0.35718274, y: -21.552456, z: 0}
+    m_Extent: {x: 0.7499851, y: 0.7199898, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &380167136237188603
@@ -380,8 +380,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: 0.092908055, y: -21.102388, z: 0}
-    m_Extent: {x: 0.17937502, y: 0.16950989, z: 0}
+    m_Center: {x: 0.09288879, y: -21.102386, z: 0}
+    m_Extent: {x: 0.17937504, y: 0.16950989, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &806182117873948997
@@ -547,8 +547,8 @@ MonoBehaviour:
   - {fileID: 4075461945432280045}
   - {fileID: 2872737268876822732}
   m_Bounds:
-    m_Center: {x: 0.91782373, y: -7.7674565, z: 0}
-    m_Extent: {x: 0.3450001, y: 1.2249999, z: 0}
+    m_Center: {x: 0.91781616, y: -7.767457, z: 0}
+    m_Extent: {x: 0.3450154, y: 1.2250004, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1853120724546012437
@@ -893,7 +893,7 @@ MonoBehaviour:
   - {fileID: 4526464701044077914}
   - {fileID: 4260945453128344473}
   m_Bounds:
-    m_Center: {x: -5.240653, y: -18.126957, z: 0}
+    m_Center: {x: -5.240656, y: -18.126955, z: 0}
     m_Extent: {x: 1.224355, y: 0.23500061, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -921,7 +921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3925951977195405533}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.01, z: 0}
+  m_LocalPosition: {x: -0.016, y: -1.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7314640821517876223}
@@ -1153,8 +1153,8 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.7471367, y: -21.192432, z: 0}
-    m_Extent: {x: 0.5997101, y: 0.23972511, z: 0}
+    m_Center: {x: -0.7471371, y: -21.19243, z: 0}
+    m_Extent: {x: 0.59971017, y: 0.23972511, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5973755926847476833
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   - {fileID: 8469698663888923694}
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.18118161, y: -18.972483, z: 0}
+    m_Center: {x: -0.18119007, y: -18.972483, z: 0}
     m_Extent: {x: 0.355995, y: 0.26987457, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1541,12 +1541,11 @@ Transform:
   m_GameObject: {fileID: 7314640821517876219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.05, y: 0.035, z: -14.5}
-  m_LocalScale: {x: 0.425, y: 0.425, z: 1}
+  m_LocalScale: {x: 0.375, y: 0.375, z: 1}
   m_Children:
   - {fileID: 7314640822670992411}
   - {fileID: 3925951977195405530}
   - {fileID: 9128548579122303009}
-  - {fileID: 1019804506}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1566,7 +1565,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1cc72111e0ced745821dddbf756fa48, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1580,7 +1579,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 7314640821517876219}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1cc72111e0ced745821dddbf756fa48, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1605,7 +1604,7 @@ MonoBehaviour:
   targetSpeed: 0
   _moveInput: {x: 0, y: 0}
   _groundCheckPoint: {fileID: 3925951977195405530}
-  _groundCheckSize: {x: 0.49, y: 0.03}
+  _groundCheckSize: {x: 0.25, y: 0.03}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 33024
@@ -1713,6 +1712,7 @@ Transform:
   - {fileID: 1709811826429974880}
   - {fileID: 78957849077479216}
   - {fileID: 7067481801833049535}
+  - {fileID: 1019804506}
   m_Father: {fileID: 7314640821517876223}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -1.9471717, y: -21.102388, z: 0}
+    m_Center: {x: -1.9471843, y: -21.102386, z: 0}
     m_Extent: {x: 0.17945498, y: 0.16950989, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2049,8 +2049,8 @@ MonoBehaviour:
   - {fileID: 8469698663888923694}
   - {fileID: 2872737268876822732}
   m_Bounds:
-    m_Center: {x: -0.17717642, y: -14.967457, z: 0}
-    m_Extent: {x: 0.7300002, y: 1.2850003, z: 0}
+    m_Center: {x: -0.17718506, y: -14.967455, z: 0}
+    m_Extent: {x: 0.73000026, y: 1.2849998, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &8844485965089553584
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   - {fileID: 970809093758707463}
   - {fileID: 5323924768638664994}
   m_Bounds:
-    m_Center: {x: 4.860896, y: -18.139717, z: 0}
+    m_Center: {x: 4.8608894, y: -18.139715, z: 0}
     m_Extent: {x: 1.224605, y: 0.23500061, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

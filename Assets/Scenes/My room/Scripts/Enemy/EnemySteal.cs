@@ -29,6 +29,7 @@ public class EnemySteal : MonoBehaviour
             player = collision.GetComponent<PlayerStamina>();
             if(!player.isCollisionned && player.stamina <= player.maxStamina && player.stamina >= player.staminaRegain)
                 player.TakeDamage(staminaDamage);
+            player.isCollisionned = true;
             knowsPlayer = true;
         }
     }
