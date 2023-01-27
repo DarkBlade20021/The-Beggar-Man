@@ -21,9 +21,9 @@ public class MyPlayer : MonoBehaviour
 	//but can only be privately written to.
 	public float targetSpeed;
 	public bool IsFacingRight { get; private set; }
-	public bool IsFrozen { get; private set; }
+	public bool IsFrozen;
 	public bool IsJumping { get; private set; }
-	public bool CollisionWithWall { get; private set; }
+	public bool CollisionWithWall;
 
 	//Timers (also all fields, could be private and a method returning a bool could be used)
 	public float LastOnGroundTime { get; private set; }
@@ -80,14 +80,6 @@ public class MyPlayer : MonoBehaviour
 
 	private void Update()
 	{
-		if(DialogueManager.Instance.dialogueIsPlaying)
-			SetFrozen(true);
-		else
-			SetFrozen(false);
-		if(PlayerStamina.Instance.isKnockedOut)
-			SetFrozen(true);
-		else
-			SetFrozen(false);
 		if(IsFrozen)
 		{
 			RB.velocity = new Vector2(0, RB.velocity.y);
@@ -395,15 +387,6 @@ public class MyPlayer : MonoBehaviour
 		shootComp.canShoot = false;
 		shootComp.shooting = false;
 		shootComp.bagsInstantiating = 0;
-	}
-	public void SetFrozen(bool state)
-    {
-		IsFrozen = state;
-    }
-
-	public void SetCollision(bool state)
-	{
-		CollisionWithWall = state;
 	}
 
 	#endregion

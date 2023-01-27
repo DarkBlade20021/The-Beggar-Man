@@ -23,12 +23,14 @@ public class DialogueManager : MonoBehaviour
 	private GameObject dialoguePanel = null;
 	[SerializeField]
 	private GameObject choicesHolder = null;
-
+	[SerializeField]
+	private MyPlayer player = null;
 
 	void Awake()
 	{
 		// Remove the default message
 		RemoveChildren();
+		player = MyPlayer.Instance;
 	}
 
 	private static DialogueManager instance;
@@ -41,11 +43,12 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	// Creates a new Story object with the compiled story which we can then play!
-	public void StartStory()
+    // Creates a new Story object with the compiled story which we can then play!
+    public void StartStory()
 	{
 		if(dialogueIsPlaying)
 		{
+			player.IsFrozen = true;
 			dialoguePanel.SetActive(true);
 			story = new Story(inkJSONAsset.text);
 			if(OnCreateStory != null) OnCreateStory(story);
@@ -58,7 +61,8 @@ public class DialogueManager : MonoBehaviour
     {
 		dialogueIsPlaying = false;
 		dialoguePanel.SetActive(false);
-    }
+		player.IsFrozen = false;
+	}
 
 	// This is the main function called every time the story changes. It does a few things:
 	// Destroys all the old content and choices.
