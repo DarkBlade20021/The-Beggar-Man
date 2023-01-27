@@ -10,12 +10,23 @@ public class PlayerStamina : MonoBehaviour
     public float staminaRegain;
     public float maxStamina;
     public bool isKnockedOut = false;
+    public bool gettingDamage = false;
     public bool regained = true;
     public bool isCollisionned = false;
 
     [Header("References")]
     private MyPlayer player;
     public TMP_Text staminaText;
+
+    private static PlayerStamina instance;
+    public static PlayerStamina Instance
+    {
+        get
+        {
+            if(instance == null) instance = GameObject.FindObjectOfType<PlayerStamina>();
+            return instance;
+        }
+    }
 
     void Start()
     {
@@ -32,24 +43,18 @@ public class PlayerStamina : MonoBehaviour
             isKnockedOut = true;
             stamina = 0;
         }
-        if(stamina < maxStamina && !isCollisionned && regained)
+        if(stamina < maxStamina && !isCollisionned && regained && !gettingDamage)
         {
             if(isKnockedOut)
-            {
                 StartCoroutine(RegainStamina());
-                player.SetFrozen(true);
-            }
             else if(player._moveInput.x == 0)
                 StartCoroutine(RegainStamina());
         }
-        if(stamina >= maxStamina && !isCollisionned)
+        if(stamina >= maxStamina && !isCollisionned && !gettingDamage)
         {
             stamina = 100;
             if(isKnockedOut)
-            {
                 isKnockedOut = false;
-                player.SetFrozen(false);
-            }
             regained = true;
         }
     }
@@ -60,6 +65,7 @@ public class PlayerStamina : MonoBehaviour
         stamina += staminaRegain;
         yield return new WaitForSeconds(0.1f);
         regained = true;
+        player.SetFrozen(true);
     }
 
     public void TakeDamage(float damage)
@@ -68,10 +74,10 @@ public class PlayerStamina : MonoBehaviour
     }
     IEnumerator TakeDamageR(float damage)
     {
-        isCollisionned = true;
+        gettingDamage = true;
         stamina -= damage;
         yield return new WaitForSeconds(1f);
-        isCollisionned = false;
+        gettingDamage = false;
     }
 
 }

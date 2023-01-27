@@ -84,6 +84,17 @@ public class MyPlayer : MonoBehaviour
 			SetFrozen(true);
 		else
 			SetFrozen(false);
+		if(PlayerStamina.Instance.isKnockedOut)
+			SetFrozen(true);
+		else
+			SetFrozen(false);
+		if(IsFrozen)
+		{
+			RB.velocity = new Vector2(0, RB.velocity.y);
+			_moveInput.x = 0;
+			_moveInput.y = 0;
+			targetSpeed = 0;
+		}
 		if(!IsFrozen)
 		{
 
