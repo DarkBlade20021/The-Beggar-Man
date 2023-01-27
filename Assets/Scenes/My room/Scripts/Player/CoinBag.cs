@@ -35,7 +35,10 @@ public class CoinBag : MonoBehaviour
         foreach(string enemyTag in enemyTags)
         {
             if(collision.gameObject.tag == enemyTag && !contacted)
+            {
                 collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                contacted = true;
+            }
         }
     }
 }
