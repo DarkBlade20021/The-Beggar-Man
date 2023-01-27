@@ -41,12 +41,16 @@ public class PlayerStamina : MonoBehaviour
         if(stamina <= 0 && !isKnockedOut)
         {
             isKnockedOut = true;
+            player.IsFrozen = true;
             stamina = 0;
         }
         if(stamina < maxStamina && !isCollisionned && regained && !gettingDamage)
         {
             if(isKnockedOut)
+            {
+                player.IsFrozen = true;
                 StartCoroutine(RegainStamina());
+            }
             else if(player._moveInput.x == 0)
                 StartCoroutine(RegainStamina());
         }
@@ -54,7 +58,10 @@ public class PlayerStamina : MonoBehaviour
         {
             stamina = 100;
             if(isKnockedOut)
+            {
+                player.IsFrozen = false;
                 isKnockedOut = false;
+            }
             regained = true;
         }
     }
@@ -65,7 +72,7 @@ public class PlayerStamina : MonoBehaviour
         stamina += staminaRegain;
         yield return new WaitForSeconds(0.1f);
         regained = true;
-        player.SetFrozen(true);
+        player.IsFrozen = true;
     }
 
     public void TakeDamage(float damage)
