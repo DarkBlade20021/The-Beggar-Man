@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemySteal : MonoBehaviour
 {
@@ -20,16 +18,18 @@ public class EnemySteal : MonoBehaviour
             if(player.isKnockedOut)
                 patrol.stopFollowing = true;
         }
+        if(player.isKnockedOut)
+            CoinCounter.Instance.SubtractCoinsPercentage(Random.Range(0, 30));
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == playerTag && !knowsPlayer)
+        if(collision.gameObject.tag == playerTag)
         {
             player = collision.GetComponent<PlayerStamina>();
-            if(!player.isCollisionned && player.stamina <= player.maxStamina && player.stamina >= player.staminaRegain)
-                player.TakeDamage(staminaDamage);
             player.isCollisionned = true;
+            if(player.isCollisionned && player.stamina <= player.maxStamina && player.stamina >= player.staminaRegain && !player.gettingDamage)
+                player.TakeDamage(staminaDamage);
             knowsPlayer = true;
         }
     }
