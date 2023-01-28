@@ -16,6 +16,7 @@ public class PlayerStamina : MonoBehaviour
 
     [Header("References")]
     private MyPlayer player;
+    public EnemySteal lastEnemy;
     public TMP_Text staminaText;
 
     private static PlayerStamina instance;
@@ -72,15 +73,15 @@ public class PlayerStamina : MonoBehaviour
         stamina += staminaRegain;
         yield return new WaitForSeconds(0.1f);
         regained = true;
-        player.IsFrozen = true;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, EnemySteal enemy)
     {
-        StartCoroutine(TakeDamageR(damage));
+        StartCoroutine(TakeDamageR(damage, enemy));
     }
-    IEnumerator TakeDamageR(float damage)
+    IEnumerator TakeDamageR(float damage, EnemySteal enemy)
     {
+        lastEnemy = enemy;
         gettingDamage = true;
         stamina -= damage;
         yield return new WaitForSeconds(1f);

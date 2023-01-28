@@ -5,6 +5,7 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     public bool isPushed;
+    public bool isToggle;
     public float time;
     public GameObject obj;
     public Transform newPos;
@@ -34,7 +35,7 @@ public class PressurePlate : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Coin Bag" && isPushed || other.gameObject.tag == "Player" && isPushed)
+        if(other.gameObject.tag == "Coin Bag" && isPushed || other.gameObject.tag == "Player" && isPushed && !isToggle)
         {
             isPushed = false;
             door.pressurePlatesOpenned--;

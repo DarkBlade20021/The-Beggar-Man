@@ -10,7 +10,7 @@ public class EnemyPatrol : MonoBehaviour
     const string R = "right";
 
     [SerializeField] Transform castPos;
-    [SerializeField] Transform playerTarget;
+    [SerializeField] public Transform playerTarget;
     [SerializeField] float baseCastXDist;
     [SerializeField] float baseCastYDist;
     public LayerMask groundLayer;
@@ -19,6 +19,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     public float chaseSpeed;
     public bool isFollowing;
+    public bool inTrap;
     public bool stopFollowing;
 
     string facingDirection;
@@ -29,6 +30,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header("References")]
     public GameObject graphics;
+    public Collider2D collider;
     public Animator anim;
     public Rigidbody2D rb;
     public EnemyHealth health;
@@ -45,7 +47,7 @@ public class EnemyPatrol : MonoBehaviour
     void FixedUpdate()
     {
         anim.SetBool("isFollowing", isFollowing);
-        if(!health.isDead && !isFollowing)
+        if(!health.isDead && !isFollowing && !inTrap)
         {
             float vX = speed;
 
@@ -65,8 +67,13 @@ public class EnemyPatrol : MonoBehaviour
             }
             isFollowing = LookForPlayer();
         }
-        if(!health.isDead && isFollowing)
+        if(!health.isDead && isFollowing && !inTrap)
         {
+            if(platformEdge1.gameObject.activeSelf)
+            {
+                platformEdge1.gameObject.SetActive(false);
+                platformEdge2.gameObject.SetActive(false);
+            }
             float vX = chaseSpeed;
 
             if(facingDirection == L)
@@ -98,8 +105,19 @@ public class EnemyPatrol : MonoBehaviour
                 ChangeFacingDirection(L);
             isFollowing = true;
         }
-    }
+        if(inTrap)
+        {
+            float vX = chaseSpeed;
+            rb.velocity = new Vector2(vX, rb.velocity.y);
 
+            if(collider.enabled)
+            {
+                this.GetComponent<CircleCollider2D>().enabled = false;
+                this.GetComponent<Rigidbody2D>().gravityScale = 0;
+                collider.enabled = false;
+            }
+        }
+    }
     public bool Die(bool isDead)
     {
         isDead = true;

@@ -86,6 +86,9 @@ public class MyPlayer : MonoBehaviour
 			_moveInput.x = 0;
 			_moveInput.y = 0;
 			targetSpeed = 0;
+			anim.SetBool("isRunning", false);
+			anim.SetFloat("speed", 0f);
+
 		}
 		if(!IsFrozen)
 		{

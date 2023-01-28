@@ -72,3 +72,4 @@ MonoBehaviour:
     type: 3}
   dialoguePanel: {fileID: 0}
   choicesHolder: {fileID: 0}
+  player: {fileID: 0}

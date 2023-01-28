@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You are stuck in a trap for 2 seconds!
+  m_text: 'You are stuck in a trap for 3 seconds!
 
 '
   m_isRightToLeft: 0
