@@ -39,7 +39,7 @@ public class EnemyPatrol : MonoBehaviour
     {
         baseScale = transform.localScale;
 
-        facingDirection = R;
+        facingDirection = L;
 
         playerTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }

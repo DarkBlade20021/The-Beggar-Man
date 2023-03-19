@@ -35,7 +35,7 @@ public class PressurePlate : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Coin Bag" && isPushed || other.gameObject.tag == "Player" && isPushed && !isToggle)
+        if(other.gameObject.tag == "Coin Bag" && isPushed && !isToggle || other.gameObject.tag == "Player" && isPushed && !isToggle)
         {
             isPushed = false;
             door.pressurePlatesOpenned--;

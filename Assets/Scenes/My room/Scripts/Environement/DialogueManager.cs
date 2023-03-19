@@ -2,13 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections.Generic;
 using Ink.Runtime;
 
 // This is a super bare bones example of how to play and display a ink story in Unity.
 public class DialogueManager : MonoBehaviour
 {
 	public static event Action<Story> OnCreateStory;
+	List<string> tags;
 	public bool dialogueIsPlaying;
+	public string currentAction;
 
 	[SerializeField]
 	public TextAsset inkJSONAsset;
@@ -81,6 +84,7 @@ public class DialogueManager : MonoBehaviour
 			text = text.Trim();
 			// Display the text on screen!
 			CreateContentView(text);
+			ParseTags();
 		}
 
 		// Display all the choices, if there are any!
@@ -100,11 +104,51 @@ public class DialogueManager : MonoBehaviour
 		// If we've read all the content and there's no choices, the story is finished!
 		else
 		{
-			Button choice = CreateChoiceView("*Leave the Conversation*");
+			Button choice = CreateChoiceView("*Leave*");
 			choice.onClick.AddListener(delegate {
 				EndStory();
 			});
 		}
+	}
+	void ParseTags()
+    {
+		tags = story.currentTags;
+		foreach(string tag in tags)
+        {
+			string prefix = tag.Split(' ')[0];
+			string decision = tag.Split(' ')[1];
+	
+			switch(prefix.ToLower())
+            {
+				case "thief":
+					if(currentAction != decision)
+                    {
+                        currentAction = decision;
+						ThiefDecide(decision);
+					}
+					break;
+				case "poor":
+					if(currentAction != decision)
+					{
+						currentAction = decision;
+						PoorDecide(decision);
+					}
+					break;
+            }
+        }
+    }
+	
+	void ThiefDecide(string param)
+    {
+		if(param == "yes")
+			CoinCounter.Instance.SubtractCoinsPercentage(UnityEngine.Random.Range(10, 50));
+		else if(param == "no")
+			GameManager.Instance.SpawnWave();
+	}
+	void PoorDecide(string param)
+	{
+		if(param == "yes")
+			CoinCounter.Instance.SubtractCoinsPercentage(UnityEngine.Random.Range(10, 15));
 	}
 
 	// When we click the choice button, tell the story to choose that choice!
