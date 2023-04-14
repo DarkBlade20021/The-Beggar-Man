@@ -24,8 +24,8 @@ public class GameManager : MonoBehaviour
             GameObject obj = Instantiate(enemyPrefab, enemyPoses[i].position, enemyPoses[i].rotation);
             PlayerStamina player = PlayerStamina.Instance;
             player.lastEnemy = obj.GetComponentInChildren<EnemySteal>();
-            obj.GetComponent<EnemyPatrol>().playerTarget = GameObject.FindGameObjectWithTag("Player").transform;
-            obj.GetComponent<EnemyPatrol>().isFollowing = true;
+            obj.GetComponent<EnemyPatrol>().target = GameObject.FindGameObjectWithTag("Player").transform;
+            obj.GetComponent<EnemyPatrol>().currentState = obj.GetComponent<EnemyPatrol>().stopChasingState;
         }
     }
 }

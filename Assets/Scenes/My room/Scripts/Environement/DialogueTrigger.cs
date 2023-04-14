@@ -23,18 +23,32 @@ public class DialogueTrigger : MonoBehaviour
         if(playerInRange && !DialogueManager.Instance.dialogueIsPlaying)
         {
             visualCue.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                DialogueManager.Instance.inkJSONAsset = inkJSON;
-                DialogueManager.Instance.dialogueIsPlaying = true;
-                DialogueManager.Instance.StartStory();
-            }
+            MyPlayer.Instance.interactAction.Enable();
+            MyPlayer.Instance.interactAction.performed += ctx => ToInteract();
         }
-        else
+        else if(!playerInRange && !DialogueManager.Instance.dialogueIsPlaying)
         {
             visualCue.SetActive(false);
+            MyPlayer.Instance.interactAction.Disable();
+        }
+        else if(playerInRange && DialogueManager.Instance.dialogueIsPlaying)
+        {
+            visualCue.SetActive(false);
+            MyPlayer.Instance.interactAction.Disable();
+        }
+        else if(!playerInRange && DialogueManager.Instance.dialogueIsPlaying)
+        {
+            visualCue.SetActive(false);
+            MyPlayer.Instance.interactAction.Disable();
         }
     }
+
+    void ToInteract()
+    {
+        DialogueManager.Instance.inkJSONAsset = inkJSON;
+        DialogueManager.Instance.dialogueIsPlaying = true;
+        DialogueManager.Instance.StartStory();
+    }    
 
     private void OnTriggerEnter2D(Collider2D collider)
     {

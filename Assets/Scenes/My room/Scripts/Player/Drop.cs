@@ -16,18 +16,24 @@ public class Drop : MonoBehaviour
     {
         canDrop = true;
     }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
+	
+	private void FixedUpdate()
+	{
         if(!MyPlayer.Instance.IsFrozen)
+            MyPlayer.Instance.dropAction.performed += ctx => ToDrop();
+        else
+            MyPlayer.Instance.dropAction.Disable();
+        if(!canDrop && !MyPlayer.Instance.IsFrozen)
+			canDrop = true;
+	}
+	
+	void ToDrop()
+	{
+        if(CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && canDrop)
         {
-            if(Input.GetKeyDown(KeyCode.Q) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && canDrop)
-                InstantiateBag();
-            if(Input.GetKeyUp(KeyCode.Q) && !canDrop)
-                canDrop = true;
+			InstantiateBag();
         }
-    }
+	}
 
     public void InstantiateBag()
     {

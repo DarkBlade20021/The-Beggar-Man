@@ -172,8 +172,8 @@ MonoBehaviour:
   - {fileID: 8269288904995888386}
   - {fileID: 5669652726189501303}
   m_Bounds:
-    m_Center: {x: -1.6173894, y: -7.7524567, z: 0}
-    m_Extent: {x: 0.34977967, y: 1.2299995, z: 0}
+    m_Center: {x: -1.6173933, y: -7.7524567, z: 0}
+    m_Extent: {x: 0.3497911, y: 1.2299995, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &270822552130992642
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.3600688, y: -21.552391, z: 0}
+    m_Center: {x: -0.36006117, y: -21.552391, z: 0}
     m_Extent: {x: 0.7499951, y: 0.7200098, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: 0.09024139, y: -21.10254, z: 0}
+    m_Center: {x: 0.09024902, y: -21.10254, z: 0}
     m_Extent: {x: 0.17935625, y: 0.16948986, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -547,8 +547,8 @@ MonoBehaviour:
   - {fileID: 4075461945432280045}
   - {fileID: 2872737268876822732}
   m_Bounds:
-    m_Center: {x: 0.9178238, y: -7.767457, z: 0}
-    m_Extent: {x: 0.34500015, y: 1.2250004, z: 0}
+    m_Center: {x: 0.91781616, y: -7.767457, z: 0}
+    m_Extent: {x: 0.3450154, y: 1.2250004, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1853120724546012437
@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.7498355, y: -21.192148, z: 0}
+    m_Center: {x: -0.74985075, y: -21.192148, z: 0}
     m_Extent: {x: 0.5996976, y: 0.24010086, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   - {fileID: 8469698663888923694}
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -0.18278351, y: -18.97248, z: 0}
+    m_Center: {x: -0.18277588, y: -18.97248, z: 0}
     m_Extent: {x: 0.35598084, y: 0.2698717, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -1619,6 +1619,195 @@ MonoBehaviour:
   shootComp: {fileID: 0}
   dropComp: {fileID: 0}
   playerGraphics: {fileID: 7314640822670992420}
+  moveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 9736da4a-4b32-4ab1-b3f2-5a6014dd1f52
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: Keyboard
+      m_Id: 4a4b9e46-19ad-49c3-a31d-572bbcdf0173
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 6807f9c9-b2ad-40b5-b1fc-76f2173f3725
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 2ac184a9-8f88-428b-b176-6a15a0a148e8
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 90fb7736-8907-48ce-90af-25e44ba1b770
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: f294b22f-6d01-452f-8056-ff384cf18159
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: Xbox
+      m_Id: 0969386d-5fe2-4e1f-befb-4b63a6a1f8a4
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 3cbac544-0628-46af-8a1c-d4e16fe129fe
+      m_Path: <XInputController>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 8592b680-b339-45f8-96e6-a1a3a417e7e6
+      m_Path: <XInputController>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 46c7004f-a759-4e5a-b49d-750d6d135af4
+      m_Path: <XInputController>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 23c1dd74-f323-4c2f-b125-5f616ce65fc1
+      m_Path: <XInputController>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
+  jumpAction:
+    m_Name: Jump
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: e478b040-0072-44a9-8069-cbd7e6a14477
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 857a79b4-c13f-49c5-814c-189ee1c6992c
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 19e44b6b-db5a-46fe-a79e-bc6097ca681d
+      m_Path: <XInputController>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    m_Flags: 0
+  dropAction:
+    m_Name: Drop
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 3496dd36-3503-438c-aed0-32ca45262d90
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a9fe502b-09e1-46c5-97a6-c5b170acd321
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Drop
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 56b3a3ca-89dc-48d7-9793-9ac0cf0aab21
+      m_Path: <XInputController>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Drop
+      m_Flags: 0
+    m_Flags: 0
+  throwAction:
+    m_Name: Throw
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 88c2893c-0a6b-4623-b39e-2c6811e32e70
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c8fcc2b8-e415-4524-9b66-14d25cf41f96
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Throw
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 4895b707-0de2-44ce-9056-120f0b53aa26
+      m_Path: <XInputController>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Throw
+      m_Flags: 0
+    m_Flags: 0
+  interactAction:
+    m_Name: Interact
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 0c8980d4-c824-4af9-8493-f5221274f166
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6e886425-9d56-4847-8352-dc0a0ccfbb61
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 72152f6f-ce0a-4b16-9b31-676cb34b4374
+      m_Path: <XInputController>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    m_Flags: 0
   targetSpeed: 0
   IsFrozen: 0
   CollisionWithWall: 0
@@ -1838,7 +2027,7 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 8700489323505329060}
   m_Bounds:
-    m_Center: {x: -1.949851, y: -21.101635, z: 0}
+    m_Center: {x: -1.9498434, y: -21.101635, z: 0}
     m_Extent: {x: 0.17944008, y: 0.16949368, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2071,7 +2260,7 @@ MonoBehaviour:
   - {fileID: 8469698663888923694}
   - {fileID: 2872737268876822732}
   m_Bounds:
-    m_Center: {x: -0.17785412, y: -14.966986, z: 0}
+    m_Center: {x: -0.17786938, y: -14.966986, z: 0}
     m_Extent: {x: 0.73068464, y: 1.285471, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
@@ -2207,7 +2396,7 @@ MonoBehaviour:
   - {fileID: 970809093758707463}
   - {fileID: 5323924768638664994}
   m_Bounds:
-    m_Center: {x: 4.8595552, y: -18.1415, z: 0}
-    m_Extent: {x: 1.2246425, y: 0.23605537, z: 0}
+    m_Center: {x: 4.859544, y: -18.1415, z: 0}
+    m_Extent: {x: 1.2246387, y: 0.23605537, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

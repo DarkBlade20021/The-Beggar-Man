@@ -28,8 +28,7 @@ public class Trap : MonoBehaviour
         obj.transform.position = Vector3.Lerp(transform.position, newPos.position, time);
         PlayerStamina player = PlayerStamina.Instance;
         player.lastEnemy = obj.GetComponentInChildren<EnemySteal>();
-        obj.GetComponent<EnemyPatrol>().playerTarget = collision.gameObject.transform;
-        obj.GetComponent<EnemyPatrol>().inTrap = true;
+        obj.GetComponent<EnemyPatrol>().target = collision.gameObject.transform;
         player.stamina = 0;
         if(!stole)
         {

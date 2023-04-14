@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MyPlayer : MonoBehaviour
 {
@@ -13,6 +14,19 @@ public class MyPlayer : MonoBehaviour
 	public Shoot shootComp;
 	public Drop dropComp;
 	public GameObject playerGraphics;
+	#endregion
+
+	#region INPUT ACTIONS
+	[Header("Move Action")]
+	public InputAction moveAction;
+	[Header("Jump Action")]
+	public InputAction jumpAction;
+	[Header("Drop Action")]
+	public InputAction dropAction;
+	[Header("Throw Action")]
+	public InputAction throwAction;
+	[Header("Interact Action")]
+	public InputAction interactAction;
 	#endregion
 
 	#region STATE PARAMETERS
@@ -62,13 +76,30 @@ public class MyPlayer : MonoBehaviour
 			return instance;
 		}
 	}
+    private void OnEnable()
+    {
+		moveAction.Enable();
+		jumpAction.Enable();
+		dropAction.Enable();
+		throwAction.Enable();
+		interactAction.Enable();
+    }
+    private void OnDisable()
+    {
+		moveAction.Disable();
+		jumpAction.Disable();
+		dropAction.Disable();
+		throwAction.Disable();
+		interactAction.Disable();
+    }
 
-	private void Awake()
+    private void Awake()
 	{
 		RB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		shootComp = GetComponentInChildren<Shoot>();
 		dropComp = GetComponentInChildren<Drop>();
+		
 	}
 
 	private void Start()
@@ -98,8 +129,10 @@ public class MyPlayer : MonoBehaviour
 			#endregion
 
 			#region INPUT HANDLER
-			_moveInput.x = Input.GetAxisRaw("Horizontal");
-			_moveInput.y = Input.GetAxisRaw("Vertical");
+			//_moveInput.x = Input.GetAxisRaw("Horizontal");
+			//_moveInput.y = Input.GetAxisRaw("Vertical");
+			
+			_moveInput = moveAction.ReadValue<Vector2>();
 
 			if(_moveInput.x == 0)
 				anim.SetBool("isRunning", false);
@@ -109,15 +142,9 @@ public class MyPlayer : MonoBehaviour
 				anim.SetBool("isRunning", true);
 			}
 
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				OnJumpInput();
-			}
+			jumpAction.performed += ctx => OnJumpInput();
+			jumpAction.canceled += ctx => OnJumpUpInput();
 
-			if (Input.GetKeyUp(KeyCode.Space))
-			{
-				OnJumpUpInput();
-			}
 			#endregion
 
 			#region COLLISION CHECKS

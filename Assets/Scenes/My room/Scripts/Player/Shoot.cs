@@ -26,22 +26,31 @@ public class Shoot : MonoBehaviour
         {
             if(!canShoot)
                 bagsInstantiated = 0;
-            if(Input.GetMouseButtonDown(0) && CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
-            {
-                #region ANIMATION SOLVERS
-                MyPlayer.Instance.anim.SetBool("isThrowing", false);
-                #endregion
-                ShootBag();
-                bagsInstantiating++;
-            }
+            MyPlayer.Instance.throwAction.performed += ctx => ToThrow();
+        }
+        else
+        {
+            MyPlayer.Instance.throwAction.Disable();
         }
     }
+
+    void ToThrow()
+    {
+        if(CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
+        {
+            #region ANIMATION SOLVERS
+            MyPlayer.Instance.anim.SetBool("isThrowing", false);
+            #endregion
+            ShootBag();
+            bagsInstantiating++;
+        }
+    }    
 
     public void InstantiateBag()
     {
         GameObject newBag = Instantiate(bag, shootPoint.position, shootPoint.rotation);
         newBag.transform.localScale = shootPoint.localScale;
-        Rigidbody2D rb = newBag.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = newBag.GetComponentInChildren<Rigidbody2D>();
         if(MyPlayer.Instance.IsFacingRight)
             rb.AddForce(direction * shootRange);
         else

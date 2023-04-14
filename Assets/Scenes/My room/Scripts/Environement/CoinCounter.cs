@@ -38,7 +38,7 @@ public class CoinCounter : MonoBehaviour
 
     void Update()
     {
-        AddCoins(CoinsInBag);
+        //AddCoins(CoinsInBag);
         if(Coins >= maxCoins)
             coinCounterText.text = maxCoins.ToString();
         else if(Coins < maxCoins)
@@ -77,11 +77,13 @@ public class CoinCounter : MonoBehaviour
         CoinsUI -= subtractedCoins;
     }
 
-    void AddCoins(int addedCoins)
+    public void AddCoins(int addedCoins)
     {
         additionnedCoins = addedCoins + Coins;
-        if (Input.GetMouseButtonDown(1) && additionnedCoins <= maxCoins)
+        if (additionnedCoins < maxCoins)
             StartCoroutine(AddCoinsRoutine(addedCoins));
+        if(additionnedCoins >= maxCoins)
+            StartCoroutine(AddCoinsRoutine(maxCoins - addedCoins));
     }
 
     IEnumerator AddCoinsRoutine(int addedCoins)

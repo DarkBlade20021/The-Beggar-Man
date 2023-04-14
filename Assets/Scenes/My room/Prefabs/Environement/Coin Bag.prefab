@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5297183056366284112}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2779014523839405485
 SpriteRenderer:
@@ -92,8 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5297183056366284112}
-  - component: {fileID: 4124818252760305215}
-  - component: {fileID: 750098621519235139}
+  - component: {fileID: 3303917336774540698}
+  - component: {fileID: 4653839377698532706}
   m_Layer: 8
   m_Name: Coin Bag
   m_TagString: Coin Bag
@@ -112,13 +112,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children:
+  - {fileID: 8767680165222895617}
   - {fileID: 6314215499506547226}
   - {fileID: 2098193320512873529}
-  - {fileID: 8767680165222895617}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4124818252760305215
+--- !u!58 &3303917336774540698
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.3360789
---- !u!50 &750098621519235139
+--- !u!50 &4653839377698532706
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5297183056366284112}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1336390024883560056
 SpriteRenderer:
@@ -269,7 +269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5297183056366284112}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7828836824887683037
 SpriteRenderer:
@@ -337,11 +337,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contacted: 0
   time: 0.02
-  damage: 25
+  damage: 50
   throwRightRot: {x: 0, y: 0, z: 0.3, w: 0}
   throwLeftRot: {x: 0, y: 0, z: -0.3, w: 0}
   mainObject: {fileID: 3866114603615866371}
-  rb: {fileID: 750098621519235139}
+  rb: {fileID: 4653839377698532706}
   groundTags:
   - Ground
   enemyTags:

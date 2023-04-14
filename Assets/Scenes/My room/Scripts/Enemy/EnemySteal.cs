@@ -17,7 +17,7 @@ public class EnemySteal : MonoBehaviour
         if(knowsPlayer)
         {
             if(player.isKnockedOut && player.lastEnemy == this)
-                patrol.stopFollowing = true;
+                patrol.currentState = patrol.stopChasingState;
         }
         if(player.isKnockedOut && !stole)
         {
