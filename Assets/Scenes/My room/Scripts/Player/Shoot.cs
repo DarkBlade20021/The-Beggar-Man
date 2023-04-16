@@ -26,6 +26,7 @@ public class Shoot : MonoBehaviour
         {
             if(!canShoot)
                 bagsInstantiated = 0;
+            MyPlayer.Instance.throwAction.Enable();
             MyPlayer.Instance.throwAction.performed += ctx => ToThrow();
         }
         else

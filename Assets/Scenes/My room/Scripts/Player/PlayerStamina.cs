@@ -16,6 +16,7 @@ public class PlayerStamina : MonoBehaviour
 
     [Header("References")]
     private MyPlayer player;
+    public GameObject breathingSFX;
     public EnemySteal lastEnemy;
     public TMP_Text staminaText;
 
@@ -39,11 +40,12 @@ public class PlayerStamina : MonoBehaviour
     void FixedUpdate()
     {
         staminaText.text = stamina + " / " + maxStamina;
-        if(stamina <= 0 && !isKnockedOut)
+        if(stamina <= 0)
         {
             isKnockedOut = true;
             player.IsFrozen = true;
             stamina = 0;
+            breathingSFX.SetActive(true);
         }
         if(stamina < maxStamina && !isCollisionned && regained && !gettingDamage)
         {
@@ -62,6 +64,7 @@ public class PlayerStamina : MonoBehaviour
             {
                 player.IsFrozen = false;
                 isKnockedOut = false;
+                breathingSFX.SetActive(false);
             }
             regained = true;
         }

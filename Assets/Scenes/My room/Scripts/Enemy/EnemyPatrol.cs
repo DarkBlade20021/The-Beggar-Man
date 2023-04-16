@@ -1,182 +1,3 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//
-//public class EnemyPatrol : MonoBehaviour
-//{
-//
-//    [Header("Properties")]
-//    const string L = "left";
-//    const string R = "right";
-//
-//    [SerializeField] Transform castPos;
-//    [SerializeField] public Transform playerTarget;
-//    [SerializeField] float baseCastXDist;
-//    [SerializeField] float baseCastYDist;
-//    public LayerMask groundLayer;
-//    public LayerMask playerLayer;
-//
-//    public float speed;
-//    public float chaseSpeed;
-//    public bool isFollowing;
-//    public bool inTrap;
-//    public bool stopFollowing;
-//
-//    string facingDirection;
-//
-//    Vector3 baseScale;
-//    [SerializeField] Transform platformEdge1;
-//    [SerializeField] Transform platformEdge2;
-//
-//    [Header("References")]
-//    public GameObject graphics;
-//    public Collider2D collider;
-//    public Animator anim;
-//    public Rigidbody2D rb;
-//    public EnemyHealth health;
-//
-//    private void Start()
-//    {
-//        baseScale = transform.localScale;
-//
-//        facingDirection = L;
-//
-//        playerTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-//    }
-//
-//    void FixedUpdate()
-//    {
-//        anim.SetBool("isFollowing", isFollowing);
-//        if(!health.isDead && !isFollowing && !inTrap)
-//        {
-//            float vX = speed;
-//
-//            if(facingDirection == L)
-//                vX = -speed;
-//            else if(facingDirection == R)
-//                vX = speed;
-//
-//            rb.velocity = new Vector2(vX, rb.velocity.y);
-//
-//            if(IsHittingWall() || IsNearEdge())
-//            {
-//                if(facingDirection == L)
-//                    ChangeFacingDirection(R);
-//                else if(facingDirection == R)
-//                    ChangeFacingDirection(L);
-//            }
-//            isFollowing = LookForPlayer();
-//        }
-//        if(!health.isDead && isFollowing && !inTrap)
-//        {
-//            if(platformEdge1.gameObject.activeSelf)
-//            {
-//                platformEdge1.gameObject.SetActive(false);
-//                platformEdge2.gameObject.SetActive(false);
-//            }
-//            float vX = chaseSpeed;
-//
-//            if(facingDirection == L)
-//                vX = -chaseSpeed;
-//            else if(facingDirection == R)
-//                vX = chaseSpeed;
-//
-//            rb.velocity = new Vector2(vX, rb.velocity.y);
-//
-//            if(playerTarget.position.x > transform.position.x && facingDirection == L)
-//                ChangeFacingDirection(R);
-//            else if(playerTarget.position.x < transform.position.x && facingDirection == R)
-//                ChangeFacingDirection(L);
-//        }
-//        if(!health.isDead && stopFollowing)
-//        {
-//            float vX = chaseSpeed;
-//
-//            if(facingDirection == L)
-//                vX = chaseSpeed;
-//            else if(facingDirection == R)
-//                vX = -chaseSpeed;
-//
-//            rb.velocity = new Vector2(vX, rb.velocity.y);
-//
-//            if(playerTarget.position.x < transform.position.x && facingDirection == L)
-//                ChangeFacingDirection(R);
-//            else if(playerTarget.position.x > transform.position.x && facingDirection == R)
-//                ChangeFacingDirection(L);
-//            isFollowing = true;
-//        }
-//        if(inTrap)
-//        {
-//            float vX = chaseSpeed;
-//            rb.velocity = new Vector2(vX, rb.velocity.y);
-//
-//            if(collider.enabled)
-//            {
-//                this.GetComponent<CircleCollider2D>().enabled = false;
-//                this.GetComponent<Rigidbody2D>().gravityScale = 0;
-//                collider.enabled = false;
-//            }
-//        }
-//    }
-//
-//
-//    bool LookForPlayer()
-//    {
-//        bool val = false;
-//        float castDist = baseCastXDist;
-//
-//        if(facingDirection == L)
-//            castDist = -baseCastXDist;
-//        else if(facingDirection == R)
-//            castDist = baseCastXDist;
-//
-//        if(Physics2D.Linecast(castPos.position, platformEdge1.position, playerLayer) || Physics2D.Linecast(castPos.position, platformEdge2.position, playerLayer))
-//            val = true;
-//        else
-//            val = false;
-//
-//        return val;
-//    }
-//
-//    bool IsHittingWall()
-//    {
-//        bool val = false;
-//        float castDist = baseCastXDist;
-//
-//        if(facingDirection == L)
-//            castDist = -baseCastXDist;
-//        else if(facingDirection == R)
-//            castDist = baseCastXDist;
-//
-//        Vector3 targetPos = castPos.position;
-//        targetPos.x += castDist;
-//
-//        if(Physics2D.Linecast(castPos.position, targetPos, groundLayer))
-//            val = true;
-//        else
-//            val = false;
-//
-//        return val;
-//    }
-//
-//    bool IsNearEdge()
-//    {
-//        bool val = true;
-//        float castDist = baseCastYDist;
-//
-//        Vector3 targetPos = castPos.position;
-//        targetPos.y -= castDist;
-//
-//        if(Physics2D.Linecast(castPos.position, targetPos, groundLayer))
-//            val = false;
-//        else
-//            val = true;
-//
-//        return val;
-//}
-//
-//}
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -191,6 +12,8 @@ public class EnemyPatrol : MonoBehaviour
     public Transform pointB;
     public float moveSpeed = 10f;
     public float chaseSpeed = 10f;
+    public float noticeTime;
+    public bool noticed;
     Vector3 baseScale;
     string facingDirection;
 
@@ -202,9 +25,11 @@ public class EnemyPatrol : MonoBehaviour
 
     public Animator anim;
     public Transform target;
+    public GameObject noticeObj;
 
     void Start()
     {
+        noticeObj.SetActive(false);
         baseScale = transform.localScale;
         facingDirection = L;
         target = pointA;
@@ -285,6 +110,9 @@ public class EnemyPatrol : MonoBehaviour
         // Chase the player if they are in the enemy's territory
         if(currentState == chasingState)
         {
+            if(!noticed)
+                StartCoroutine(Notice());
+
             anim.SetBool("isFollowing", true);
             transform.position = Vector3.MoveTowards(transform.position, target.position, chaseSpeed * Time.fixedDeltaTime);
 
@@ -311,5 +139,12 @@ public class EnemyPatrol : MonoBehaviour
                 ChangeFacingDirection(L);
             }
         }
+    }
+    IEnumerator Notice()
+    {
+        noticeObj.SetActive(true);
+        yield return new WaitForSeconds(noticeTime);
+        noticeObj.SetActive(false);
+        noticed = true;
     }
 }

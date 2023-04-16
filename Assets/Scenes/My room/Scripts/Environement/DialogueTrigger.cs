@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Properties")]
+    public List<GameObject> UI;
+    public List<GameObject> UIEnabled;
+
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
 
@@ -45,9 +49,15 @@ public class DialogueTrigger : MonoBehaviour
 
     void ToInteract()
     {
+        foreach(GameObject UIElement in UI)
+        {
+            if(UIElement.activeSelf)
+                UIEnabled.Add(UIElement);
+            UIElement.SetActive(false);
+        }
         DialogueManager.Instance.inkJSONAsset = inkJSON;
         DialogueManager.Instance.dialogueIsPlaying = true;
-        DialogueManager.Instance.StartStory();
+        DialogueManager.Instance.StartStory(UIEnabled);
     }    
 
     private void OnTriggerEnter2D(Collider2D collider)
