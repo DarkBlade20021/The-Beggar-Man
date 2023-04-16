@@ -8,7 +8,9 @@ public class EnemySteal : MonoBehaviour
     public bool stole;
     public string playerTag;
     public float staminaDamage;
-    private PlayerStamina player;
+    public float healthDamage;
+    private PlayerStamina playerStamina;
+    private PlayerHealth playerHealth;
 
     private void Update()
     {
@@ -16,10 +18,10 @@ public class EnemySteal : MonoBehaviour
             Destroy(this);
         if(knowsPlayer)
         {
-            if(player.isKnockedOut && player.lastEnemy == this)
+            if(playerStamina.isKnockedOut && playerStamina.lastEnemy == this)
                 patrol.currentState = patrol.stopChasingState;
         }
-        if(player.isKnockedOut && !stole)
+        if(playerStamina.isKnockedOut && !stole)
         {
             CoinCounter.Instance.SubtractCoinsPercentage(Random.Range(0, 30));
             stole = true;
@@ -30,10 +32,14 @@ public class EnemySteal : MonoBehaviour
     {
         if(collision.gameObject.tag == playerTag)
         {
-            player = collision.GetComponent<PlayerStamina>();
-            player.isCollisionned = true;
-            if(player.isCollisionned && player.stamina <= player.maxStamina && player.stamina >= player.staminaRegain && !player.gettingDamage)
-                player.TakeDamage(staminaDamage, this.GetComponent<EnemySteal>());
+            playerStamina = collision.GetComponent<PlayerStamina>();
+            playerHealth = collision.GetComponent<PlayerHealth>();
+            playerStamina.isCollisionned = true;
+            if(playerStamina.isCollisionned && playerStamina.stamina <= playerStamina.maxStamina && playerStamina.stamina >= playerStamina.staminaRegain && !playerStamina.gettingDamage)
+            {
+                playerHealth.TakeDamage(healthDamage);
+                playerStamina.TakeDamage(staminaDamage, this.GetComponent<EnemySteal>());
+            }
             knowsPlayer = true;
         }
     }

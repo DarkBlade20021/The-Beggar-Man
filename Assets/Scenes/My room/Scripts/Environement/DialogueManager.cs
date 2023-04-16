@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField]
 	public TextAsset inkJSONAsset;
 	public Story story;
+	List<GameObject> UI;
 
 	// UI Prefabs
 	[SerializeField]
@@ -47,8 +48,9 @@ public class DialogueManager : MonoBehaviour
 	}
 
     // Creates a new Story object with the compiled story which we can then play!
-    public void StartStory()
+    public void StartStory(List<GameObject> UI)
 	{
+		this.UI = UI;
 		if(dialogueIsPlaying)
 		{
 			player.IsFrozen = true;
@@ -62,6 +64,8 @@ public class DialogueManager : MonoBehaviour
 
 	public void EndStory()
     {
+        foreach(GameObject UIElements in UI)
+			UIElements.SetActive(true);
 		dialogueIsPlaying = false;
 		dialoguePanel.SetActive(false);
 		player.IsFrozen = false;

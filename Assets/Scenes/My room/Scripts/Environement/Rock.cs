@@ -9,6 +9,7 @@ public class Rock : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             PlayerStamina.Instance.stamina = 0;
+            PlayerHealth.Instance.TakeDamage(100);
         }
     }
 }

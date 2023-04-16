@@ -20,7 +20,10 @@ public class Drop : MonoBehaviour
 	private void FixedUpdate()
 	{
         if(!MyPlayer.Instance.IsFrozen)
+        {
+            MyPlayer.Instance.dropAction.Enable();
             MyPlayer.Instance.dropAction.performed += ctx => ToDrop();
+        }
         else
             MyPlayer.Instance.dropAction.Disable();
         if(!canDrop && !MyPlayer.Instance.IsFrozen)
