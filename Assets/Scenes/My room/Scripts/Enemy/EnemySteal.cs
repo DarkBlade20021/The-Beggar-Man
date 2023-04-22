@@ -21,10 +21,13 @@ public class EnemySteal : MonoBehaviour
             if(playerStamina.isKnockedOut && playerStamina.lastEnemy == this)
                 patrol.currentState = patrol.stopChasingState;
         }
-        if(playerStamina.isKnockedOut && !stole)
+        if(playerStamina != null)
         {
-            CoinCounter.Instance.SubtractCoinsPercentage(Random.Range(0, 30));
-            stole = true;
+            if(playerStamina.isKnockedOut && !stole)
+            {
+                CoinCounter.Instance.SubtractCoinsPercentage(Random.Range(0, 30));
+                stole = true;
+            }
         }
     }
 

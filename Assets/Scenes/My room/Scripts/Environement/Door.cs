@@ -6,8 +6,10 @@ public class Door : MonoBehaviour
 {
     public PressurePlate[] pressurePlates;
     public float time;
+    public bool openned;
     public Transform newPos;
     public Transform oldPos;
+	public GameObject smoke;
     public int pressurePlatesOpenned = 0;
     
     void Start()
@@ -17,10 +19,15 @@ public class Door : MonoBehaviour
     
     void Update()
     {
-        if(pressurePlatesOpenned == pressurePlates.Length)
-            transform.position = Vector3.Lerp(transform.position, newPos.position, time * 0.1f);
-        else if (pressurePlatesOpenned < pressurePlates.Length)
+        smoke.SetActive(openned);
+        if(pressurePlatesOpenned == pressurePlates.Length && !openned)
+			openned = true;
+        else if (pressurePlatesOpenned < pressurePlates.Length && !openned)
             transform.position = Vector3.Lerp(transform.position, oldPos.position, time * 0.75f);
+        else if (openned)
+        {
+            transform.position = Vector3.Lerp(transform.position, newPos.position, time * 0.1f);
+        }
     }
     
 }
