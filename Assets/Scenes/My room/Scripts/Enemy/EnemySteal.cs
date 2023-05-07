@@ -25,6 +25,7 @@ public class EnemySteal : MonoBehaviour
         {
             if(playerStamina.isKnockedOut && !stole)
             {
+                patrol.anim.SetTrigger("steal");
                 CoinCounter.Instance.SubtractCoinsPercentage(Random.Range(0, 30));
                 stole = true;
             }
@@ -35,6 +36,7 @@ public class EnemySteal : MonoBehaviour
     {
         if(collision.gameObject.tag == playerTag)
         {
+            patrol.anim.SetTrigger("punch");
             playerStamina = collision.GetComponent<PlayerStamina>();
             playerHealth = collision.GetComponent<PlayerHealth>();
             playerStamina.isCollisionned = true;

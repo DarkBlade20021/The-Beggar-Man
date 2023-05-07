@@ -69,6 +69,7 @@ public class DialogueManager : MonoBehaviour
 		dialogueIsPlaying = false;
 		dialoguePanel.SetActive(false);
 		player.IsFrozen = false;
+		currentAction = null;
 	}
 
 	// This is the main function called every time the story changes. It does a few things:

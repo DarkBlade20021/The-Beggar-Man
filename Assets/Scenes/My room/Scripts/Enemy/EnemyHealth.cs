@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("References")]
     public EnemyPatrol enemy;
+    [Header("Visual Cue")]
+    [SerializeField] private GameObject visualCue;
 
     void Start()
     {
@@ -27,6 +29,21 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(collider.gameObject.tag == "Player" && isDead)
+        {
+            visualCue.SetActive(true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(collider.gameObject.tag == "Player" && isDead)
+        {
+            visualCue.SetActive(false);
+        }
     }
 
 

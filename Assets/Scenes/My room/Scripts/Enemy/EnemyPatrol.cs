@@ -26,6 +26,7 @@ public class EnemyPatrol : MonoBehaviour
     public Animator anim;
     public Transform target;
     public GameObject noticeObj;
+    public GameObject[] deathObjs;
 
     void Start()
     {
@@ -52,7 +53,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
-        if(currentState == notChasingState)
+        if(currentState == notChasingState && !isDead)
         {
             anim.SetBool("isFollowing", false);
             // Patrol between point A and point B
@@ -92,7 +93,10 @@ public class EnemyPatrol : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         this.GetComponent<CircleCollider2D>().enabled = false;
         this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        Destroy(this.gameObject);
+        foreach (GameObject deathObj in deathObjs)
+            Destroy(deathObj);
+        anim.SetBool("dead", true);
+        anim.SetBool("isFollowing", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -108,7 +112,7 @@ public class EnemyPatrol : MonoBehaviour
     private void FixedUpdate()
     {
         // Chase the player if they are in the enemy's territory
-        if(currentState == chasingState)
+        if(currentState == chasingState && !isDead)
         {
             if(!noticed)
                 StartCoroutine(Notice());

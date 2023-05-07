@@ -5,13 +5,12 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Properties")]
+    public bool canceled;
     public List<GameObject> UI;
     public List<GameObject> UIEnabled;
 
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
-    [SerializeField] private Animator visualCueAnim;
-    [SerializeField] private InteractKeyAnim keyAnim;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
@@ -22,33 +21,25 @@ public class DialogueTrigger : MonoBehaviour
     {
         playerInRange = false;
         visualCue.SetActive(false);
-        visualCueAnim = visualCue.GetComponent<Animator>();
     }
 
     private void Update()
     {
         visualCue.SetActive(playerInRange);
-        if(playerInRange && !DialogueManager.Instance.dialogueIsPlaying)
+        if(playerInRange && !DialogueManager.Instance.dialogueIsPlaying && canceled)
         {
-            keyAnim.KeyPopUp(visualCueAnim);
             MyPlayer.Instance.interactAction.Enable();
             MyPlayer.Instance.interactAction.performed += ctx => ToInteract();
         }
-        else if(!playerInRange && !DialogueManager.Instance.dialogueIsPlaying)
+        else
         {
-            keyAnim.KeyPressed(visualCueAnim);
-            MyPlayer.Instance.interactAction.Disable();
+            if(!canceled)
+            {
+                MyPlayer.Instance.interactAction.Disable();
+                canceled = true;
+            }
         }
-        else if(playerInRange && DialogueManager.Instance.dialogueIsPlaying)
-        {
-            keyAnim.KeyPressed(visualCueAnim);
-            MyPlayer.Instance.interactAction.Disable();
-        }
-        else if(!playerInRange && DialogueManager.Instance.dialogueIsPlaying)
-        {
-            keyAnim.KeyPressed(visualCueAnim);
-            MyPlayer.Instance.interactAction.Disable();
-        }
+
     }
 
     void ToInteract()
@@ -77,6 +68,7 @@ public class DialogueTrigger : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             playerInRange = false;
+            canceled = false;
         }
     }
 
