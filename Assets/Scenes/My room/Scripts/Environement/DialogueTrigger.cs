@@ -28,16 +28,13 @@ public class DialogueTrigger : MonoBehaviour
         visualCue.SetActive(playerInRange);
         if(playerInRange && !DialogueManager.Instance.dialogueIsPlaying && canceled)
         {
-            MyPlayer.Instance.interactAction.Enable();
-            MyPlayer.Instance.interactAction.performed += ctx => ToInteract();
+            if(MyPlayer.Instance.interactAction.WasReleasedThisFrame())
+                ToInteract();
         }
         else
         {
             if(!canceled)
-            {
-                MyPlayer.Instance.interactAction.Disable();
                 canceled = true;
-            }
         }
 
     }
