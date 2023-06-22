@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d592ed68811674bb016592a988c154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canceled: 0
   UI:
   - {fileID: 0}
   - {fileID: 0}
@@ -390,7 +391,7 @@ MonoBehaviour:
   - {fileID: 0}
   UIEnabled: []
   visualCue: {fileID: 2357915818455276745}
-  inkJSON: {fileID: 4900000, guid: 04ef3a6fa5b8cf4448f2f6644d8b2993, type: 3}
+  inkJSON: {fileID: 4900000, guid: 9866d4bab7f4afe4a983b4ed00689535, type: 3}
 --- !u!61 &2357915819292248703
 BoxCollider2D:
   m_ObjectHideFlags: 0

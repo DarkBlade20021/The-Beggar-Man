@@ -1,7 +1,34 @@
 fileFormatVersion: 2
 guid: c5f1e197b28e1334ba05ff91dc6f022c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5609723983994973283
+    second: KeyboardIcon_0
+  - first:
+      213: -9213218734478187874
+    second: KeyboardIcon_1
+  - first:
+      213: 5179601519182022717
+    second: KeyboardIcon_2
+  - first:
+      213: 2286068541976997709
+    second: KeyboardIcon_3
+  - first:
+      213: 9180438703968545822
+    second: KeyboardIcon_4
+  - first:
+      213: 753868373804379066
+    second: KeyboardIcon_5
+  - first:
+      213: 1314343482754292532
+    second: KeyboardIcon_6
+  - first:
+      213: -2316295805438048424
+    second: KeyboardIcon_7
+  - first:
+      213: -6100535607007086853
+    second: KeyboardIcon_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,13 +68,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 382, y: 0, z: 4925, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -75,9 +102,222 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: KeyboardIcon_0
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 564
+        width: 169
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d939df512c14622b0800000000000000
+      internalID: -5609723983994973283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_1
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 539
+        width: 168
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92247def52142080800000000000000
+      internalID: -9213218734478187874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_2
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 557
+        width: 168
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d380be49324a1e740800000000000000
+      internalID: 5179601519182022717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_3
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 145
+        width: 431
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4febb01a3fb9bf10800000000000000
+      internalID: 2286068541976997709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_4
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 405
+        width: 4
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1cea487c58776f70800000000000000
+      internalID: 9180438703968545822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_5
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 363
+        width: 168
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbe204ba47467a00800000000000000
+      internalID: 753868373804379066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_6
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 363
+        width: 165
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b5b621f6c7d3210800000000000000
+      internalID: 1314343482754292532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_7
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 363
+        width: 165
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857432abc3ddadfd0800000000000000
+      internalID: -2316295805438048424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeyboardIcon_8
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 41
+        width: 1065
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf678bcff2b865ba0800000000000000
+      internalID: -6100535607007086853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

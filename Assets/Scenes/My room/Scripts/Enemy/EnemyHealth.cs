@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public bool looted = false;
 
     [Header("References")]
-    public EnemyPatrol enemy;
+    public EnemyMovement enemy;
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
     private bool playerInRange;

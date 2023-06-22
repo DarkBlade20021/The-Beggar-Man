@@ -12,6 +12,7 @@ public class CoinBag : MonoBehaviour
     public Quaternion throwLeftRot;
 
     [Header("References")]
+    public AudioSource[] dropSfxs;
     public GameObject mainObject;
     public Rigidbody2D rb;
     public string[] groundTags;
@@ -30,12 +31,18 @@ public class CoinBag : MonoBehaviour
         foreach(string groundTag in groundTags)
         {
             if(collision.gameObject.tag == groundTag && !contacted)
+            {
+                int dropSfx = Random.Range(0, dropSfxs.Length);
+                dropSfxs[dropSfx].Play();
                 contacted = true;
+            }
         }
         foreach(string enemyTag in enemyTags)
         {
             if(collision.gameObject.tag == enemyTag && !contacted)
             {
+                int dropSfx = Random.Range(0, dropSfxs.Length);
+                dropSfxs[dropSfx].Play();
                 collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
                 contacted = true;
             }

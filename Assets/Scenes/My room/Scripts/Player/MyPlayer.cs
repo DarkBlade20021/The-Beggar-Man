@@ -14,6 +14,12 @@ public class MyPlayer : MonoBehaviour
 	public Shoot shootComp;
 	public Drop dropComp;
 	public GameObject playerGraphics;
+	[Header("Audio")]
+	public GameObject runningAudio;
+	public AudioSource jumpingAudio;
+	public bool jumpingBool;
+	public AudioSource landingAudio;
+	public bool landingBool;
 	#endregion
 
 	#region INPUT ACTIONS
@@ -104,6 +110,7 @@ public class MyPlayer : MonoBehaviour
 
 	private void Start()
 	{
+		runningAudio.SetActive(false);
 		CollisionWithWall = false;
 		SetGravityScale(Data.gravityScale);
 		IsFacingRight = true;
@@ -123,7 +130,6 @@ public class MyPlayer : MonoBehaviour
 		}
 		if(!IsFrozen)
 		{
-
 			#region TIMERS
 			LastOnGroundTime -= Time.deltaTime;
 			#endregion
@@ -135,10 +141,14 @@ public class MyPlayer : MonoBehaviour
 			_moveInput = moveAction.ReadValue<Vector2>();
 
 			if(_moveInput.x == 0)
+			{
 				anim.SetBool("isRunning", false);
+				runningAudio.SetActive(false);
+			}
 			else
             {
 				CheckDirectionToFace(_moveInput.x > 0);
+				runningAudio.SetActive(true);
 				anim.SetBool("isRunning", true);
 			}
 
@@ -173,14 +183,31 @@ public class MyPlayer : MonoBehaviour
 			}
 
 			if(IsJumping)
+			{
 				anim.SetBool("isJumping", true);
+				if(!jumpingBool)
+				{
+					jumpingAudio.Play();
+					jumpingBool = true;
+					landingBool = false;
+				}
+			}
 			else
+			{
 				anim.SetBool("isJumping", false);
-
+				if(!landingBool)
+				{
+                	landingAudio.Play();
+					landingBool = true;
+					jumpingBool = false;
+				}
+			}
 			//Jump
 			if (CanJump() && LastPressedJumpTime > 0)
 			{
 				anim.SetTrigger("takeOf");
+				jumpingBool = false;
+				landingBool = true;
 				IsJumping = true;
 				_isJumpCut = false;
 				_isJumpFalling = false;

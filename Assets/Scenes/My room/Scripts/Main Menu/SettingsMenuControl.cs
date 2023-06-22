@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenuControl : MonoBehaviour
 {
-	public Dropdown resolutionDropdown;
+	public TMP_Dropdown resolutionDropdown;
 	public GameObject PostProcessingObj;
 	public int isBloomedInt;
 

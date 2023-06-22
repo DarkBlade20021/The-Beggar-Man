@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
     bool isWaitingForWind;
     public GameObject windPrefab;
     public GameObject lightWindPrefab;
-    public GameObject enemyPrefab;
-    public Transform[] enemyPoses;
     public Transform[] windPoses;
+    [SerializeField] Animator Fade;
 
     private void Start()
     {
+        Fade.Play("FadeIn");
         levelNum = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -55,18 +55,6 @@ public class GameManager : MonoBehaviour
             int windPosI = Random.Range(0, windPoses.Length);
             Instantiate(lightWindPrefab, windPoses[windPosI].position, windPoses[windPosI].rotation);
             isWaitingForWind = false;
-        }
-    }
-
-    public void SpawnWave()
-    {
-        for(int i = 0; i < enemyPoses.Length; i++)
-        {
-            GameObject obj = Instantiate(enemyPrefab, enemyPoses[i].position, enemyPoses[i].rotation);
-            PlayerStamina player = PlayerStamina.Instance;
-            player.lastEnemy = obj.GetComponentInChildren<EnemySteal>();
-            obj.GetComponent<EnemyPatrol>().target = GameObject.FindGameObjectWithTag("Player").transform;
-            obj.GetComponent<EnemyPatrol>().currentState = obj.GetComponent<EnemyPatrol>().stopChasingState;
         }
     }
 

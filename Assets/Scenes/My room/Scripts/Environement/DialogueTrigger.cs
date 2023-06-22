@@ -28,11 +28,13 @@ public class DialogueTrigger : MonoBehaviour
         visualCue.SetActive(playerInRange);
         if(playerInRange && !DialogueManager.Instance.dialogueIsPlaying && canceled)
         {
+            print("is about to do it");
             if(MyPlayer.Instance.interactAction.WasReleasedThisFrame())
                 ToInteract();
         }
         else
         {
+            print("nah dude");
             if(!canceled)
                 canceled = true;
         }
@@ -41,6 +43,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void ToInteract()
     {
+        print("HE DID IT!!");
         foreach(GameObject UIElement in UI)
         {
             if(UIElement.activeSelf)

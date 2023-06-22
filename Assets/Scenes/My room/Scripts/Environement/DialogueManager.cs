@@ -148,7 +148,7 @@ public class DialogueManager : MonoBehaviour
 		if(param == "yes")
 			CoinCounter.Instance.SubtractCoinsPercentage(UnityEngine.Random.Range(10, 50));
 		else if(param == "no")
-			GameManager.Instance.SpawnWave();
+			PlayerHealth.Instance.TakeDamage(100f);
 	}
 	void PoorDecide(string param)
 	{
