@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public EnemyMovement enemy;
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
-    private bool playerInRange;
+    public bool playerInRange;
 
     void Start()
     {
@@ -22,28 +22,21 @@ public class EnemyHealth : MonoBehaviour
         health = maxHealth;
     }
 
+
     void FixedUpdate()
     {
-        visualCue.SetActive(playerInRange);
-        if(playerInRange && !looted)
-        {
-            MyPlayer.Instance.interactAction.Enable();
-            MyPlayer.Instance.interactAction.performed += ctx => ToInteract();
-        }
-        else if(!playerInRange || looted)
-        {
-            MyPlayer.Instance.interactAction.performed -= ctx => ToInteract();
-            MyPlayer.Instance.interactAction.Disable();
-        }
-        //print(health + " / " + maxHealth + " HP");
+        if(MyPlayer.Instance.interactAction.WasReleasedThisFrame() && !looted)
+            ToInteract();
+        print(health + " / " + maxHealth + " HP");
         if(health <= 0 && !isDead)
             isDead = enemy.Die(isDead);
     }
 
     void ToInteract()
     {
-        CoinCounter.Instance.AddCoins(75);
+        CoinCounter.Instance.AddCoins(100);
         looted = true;
+        Destroy(enemy.gameObject);
     }    
 
     public void TakeDamage(float damage)
@@ -62,5 +55,9 @@ public class EnemyHealth : MonoBehaviour
             playerInRange = false;
     }
 
+    public bool playerHere()
+    {
+        return playerInRange;
+    }
 
 }

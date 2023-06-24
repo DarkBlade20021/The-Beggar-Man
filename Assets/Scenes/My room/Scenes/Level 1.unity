@@ -273,6 +273,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad44524ef4f51c4e8ae76dbdea355d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &870111953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9187585469223531261, guid: c30624bef22f0324faf38888d6a00725,
+    type: 3}
+  m_PrefabInstance: {fileID: 5986812399221649904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &989435478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1983989207, guid: c30624bef22f0324faf38888d6a00725,
+    type: 3}
+  m_PrefabInstance: {fileID: 5986812399221649904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1008794605 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 246208930, guid: 0838963f1afcaa849898c47ba3a50e13,
@@ -290,6 +302,12 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1344036773, guid: 0838963f1afcaa849898c47ba3a50e13,
     type: 3}
   m_PrefabInstance: {fileID: 954320508557871169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1367301172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5986812398512197854, guid: c30624bef22f0324faf38888d6a00725,
+    type: 3}
+  m_PrefabInstance: {fileID: 5986812399221649904}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1470237554 stripped
 Transform:
@@ -719,6 +737,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1983989207, guid: c30624bef22f0324faf38888d6a00725, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983989210, guid: c30624bef22f0324faf38888d6a00725, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983989210, guid: c30624bef22f0324faf38888d6a00725, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.376
+      objectReference: {fileID: 0}
     - target: {fileID: 5986812399430450661, guid: c30624bef22f0324faf38888d6a00725,
         type: 3}
       propertyPath: pointA
@@ -729,6 +759,26 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 2116556560}
+    - target: {fileID: 5986812399430450661, guid: c30624bef22f0324faf38888d6a00725,
+        type: 3}
+      propertyPath: visualCue
+      value: 
+      objectReference: {fileID: 989435478}
+    - target: {fileID: 5986812399430450661, guid: c30624bef22f0324faf38888d6a00725,
+        type: 3}
+      propertyPath: deathObjs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986812399430450661, guid: c30624bef22f0324faf38888d6a00725,
+        type: 3}
+      propertyPath: deathObjs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1367301172}
+    - target: {fileID: 5986812399430450661, guid: c30624bef22f0324faf38888d6a00725,
+        type: 3}
+      propertyPath: deathObjs.Array.data[2]
+      value: 
+      objectReference: {fileID: 870111953}
     - target: {fileID: 8144394226239448203, guid: c30624bef22f0324faf38888d6a00725,
         type: 3}
       propertyPath: m_RootOrder

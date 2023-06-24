@@ -13,18 +13,21 @@ public class MainMenuSystem : MonoBehaviour
     public Animator anim;
 
     [Header("First Buttons")]
+    public GameObject quitFirstButton;
     public GameObject firstButton;
     public GameObject controlsFirstButton;
     public GameObject xboxFirstButton;
     public GameObject keyboardFirstButton;
     public GameObject settingsFirstButton;
     [Header("Menus")]
+    public GameObject quit;
     public GameObject home;
     public GameObject controls;
     public GameObject xbox;
     public GameObject keyboard;
     public GameObject settings;
     public string currentSelecting;
+    public string quitTxt;
     public string homeTxt;
     public string controlsTxt;
     public string xboxTxt;
@@ -33,7 +36,7 @@ public class MainMenuSystem : MonoBehaviour
 
     //[Header("Used Buttons")]
     //public InputAction navigate;
-    //public InputAction submit;
+    public InputAction submit;
     public InputAction cancel;
     private static MainMenuSystem instance;
     public static MainMenuSystem Instance
@@ -47,7 +50,7 @@ public class MainMenuSystem : MonoBehaviour
 
     void Update()
     {
-        //#region AnyButtonChecker
+        #region AnyButtonChecker
         //if (InputSystem.devices.Count > 0)
         //{
         //    foreach (InputDevice device in InputSystem.devices)
@@ -86,30 +89,58 @@ public class MainMenuSystem : MonoBehaviour
         //        }
         //    }
         //}
-        //#endregion
+        #endregion
 
         #region BackButton
         if(cancel.WasPerformedThisFrame())
         {
-            if (currentSelecting == homeTxt)
+            if (currentSelecting == quitTxt)
+                QuitToHome();
+            else if (currentSelecting == homeTxt)
+                HomeToQuit();
+            else if (currentSelecting == controlsTxt)
+                ControlsToHome();
+            else if (currentSelecting == settingsTxt)
+                SettingsToHome();
+            else if (currentSelecting == xboxTxt)
+                XboxToControls();
+            else if (currentSelecting == keyboardTxt)
+                KeyboardToControls();
+        }
+        #endregion
+
+        #region SubmitCanceller
+        if(submit.WasPerformedThisFrame())
+        {
+            if (currentSelecting == quitTxt)
             {
-                Quit();
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(quitFirstButton);
+            }
+            else if (currentSelecting == homeTxt)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(firstButton);
             }
             else if (currentSelecting == controlsTxt)
             {
-                ControlsToHome();
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(controlsFirstButton);
             }
             else if (currentSelecting == settingsTxt)
             {
-                SettingsToHome();
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(settingsFirstButton);
             }
             else if (currentSelecting == xboxTxt)
             {
-                XboxToControls();
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(xboxFirstButton);
             }
             else if (currentSelecting == keyboardTxt)
             {
-                KeyboardToControls();
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(keyboardFirstButton);
             }
         }
         #endregion
@@ -118,10 +149,11 @@ public class MainMenuSystem : MonoBehaviour
     private void OnEnable()
     {
     //    navigate.Enable();
-    //    submit.Enable();
+        submit.Enable();
         cancel.Enable();
     }
 
+    #region ReturnButton
     //void ReturnButton()
     //{
     //    if (navigate.WasPerformedThisFrame())
@@ -144,6 +176,7 @@ public class MainMenuSystem : MonoBehaviour
     //        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
     //    }
     //}
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -190,6 +223,23 @@ public class MainMenuSystem : MonoBehaviour
         currentSelecting = homeTxt;
     }
 
+    public void HomeToQuit()
+    {
+        currentSelecting = quitTxt;
+        home.SetActive(true);
+        quit.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(quitFirstButton);
+    }
+    public void QuitToHome()
+    {
+        currentSelecting = homeTxt;
+        quit.SetActive(false);
+        home.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButton);
+    }
+
     public void HomeToControls()
     {
         currentSelecting = controlsTxt;
@@ -202,7 +252,7 @@ public class MainMenuSystem : MonoBehaviour
     {
         currentSelecting = xboxTxt;
         xbox.SetActive(true);
-        controls.SetActive(false);
+        controls.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(xboxFirstButton);
     }
@@ -210,7 +260,7 @@ public class MainMenuSystem : MonoBehaviour
     {
         currentSelecting = keyboardTxt;
         keyboard.SetActive(true);
-        controls.SetActive(false);
+        controls.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(keyboardFirstButton);
     }

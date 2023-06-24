@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class EnemyMovement : MonoBehaviour
 {
     public GameObject noticeObj;
@@ -19,89 +20,91 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     public bool isChasing = false;
     public bool stoppedChasing = false;
+    public string right = "Right";
+    public string left = "Left";
     public bool isFacingRight = true;
     private Vector3 originalScale;
 
+    [Header("Visual Cue")]
+    [SerializeField] private GameObject visualCue;
     void Start()
     {
         target = pointA;
         originalScale = transform.localScale;
+        print(transform.rotation);
     }
 
     void Update()
     {
-        if (!isChasing && !stoppedChasing)
-            anim.SetBool("isFollowing", false);
-        else
-            anim.SetBool("isFollowing", true);
+        visualCue.SetActive(health.playerHere());
+        if(!health.isDead)
+        {
+            if (!isChasing && !stoppedChasing)
+                anim.SetBool("isFollowing", false);
+            else
+                anim.SetBool("isFollowing", true);
+        }
     }
 
     void FixedUpdate()
     {
-        if (!isChasing && !stoppedChasing)
+        if(!health.isDead)
         {
-            // Patrol between point A and point B
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, target.position.y, transform.position.z), moveSpeed * Time.deltaTime);
-
-            //// Flip the sprite if moving towards pointB
-            //if (transform.position.x < target.position.x)
-            //{
-            //    Flip();
-            //}
-            //else
-            //{
-            //    Flip();
-            //}
-
-            // Switch target points when the enemy reaches one of them
-            if (Vector3.Distance(transform.position, new Vector3(pointA.position.x, pointA.position.y, transform.position.z)) < 0.5f)
+            if (!isChasing && !stoppedChasing )
             {
-                target = pointB;
-                Flip();
-            }
-            else if (Vector3.Distance(transform.position, new Vector3(pointB.position.x, pointB.position.y, transform.position.z)) < 0.5f)
-            {
-                target = pointA;
-                Flip();
-            }
+                // Patrol between point A and point B
+                transform.position = Vector3.MoveTowards(transform.position, new    Vector3(target.position.x, target.position.y, -16.5f), moveSpeed *     Time.deltaTime);
 
-        }
-        else
-        {
-            if (!noticed)
-                StartCoroutine(Notice());
+                // Switch target points when the enemy reaches one of them
+                if (Vector3.Distance(transform.position, new Vector3(pointA.    position.x, pointA.position.y, -16.5f)) < 0.5f)
+                {
+                    target = pointB;
+                    Flip(left);
+                }
+                else if (Vector3.Distance(transform.position, new Vector3(pointB.   position.x, pointB.position.y, -16.5f)) < 0.5f)
+                {
+                    target = pointA;
+                    Flip(right);
+                }
 
-            Vector3 chaseTarget;
-
-            if (isChasing)
-            {
-                chaseTarget = target.position;
             }
             else
             {
-                chaseTarget = new Vector3(-target.position.x, -target.position.y, transform.position.z);
-            }
+                if (!noticed)
+                    StartCoroutine(Notice());
 
-            transform.position = Vector3.MoveTowards(transform.position, chaseTarget, chaseSpeed * Time.deltaTime);
+                Vector3 chaseTarget;
 
-            // Flip the sprite if moving towards the target
-            if (transform.position.x < chaseTarget.x && !isFacingRight)
-            {
-                Flip();
-            }
-            else if (transform.position.x > chaseTarget.x && isFacingRight)
-            {
-                Flip();
+                if (isChasing)
+                {
+                    chaseTarget = target.position;
+                }
+                else
+                {
+                    chaseTarget = new Vector3(-target.position.x, -target.position. y, -16.5f);
+                }
+
+                transform.position = Vector3.MoveTowards(transform.position,    chaseTarget, chaseSpeed * Time.deltaTime);
+
+                // Flip the sprite if moving towards the target
+                if (transform.position.x < chaseTarget.x && !isFacingRight)
+                {
+                    Flip(right);
+                }
+                else if (transform.position.x > chaseTarget.x && isFacingRight)
+                {
+                    Flip(left);
+                }
             }
         }
     }
 
     IEnumerator Notice()
     {
+        noticed = true;
         noticeObj.SetActive(true);
         yield return new WaitForSeconds(noticeTime);
         noticeObj.SetActive(false);
-        noticed = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -133,9 +136,17 @@ public class EnemyMovement : MonoBehaviour
             Destroy(deathObj);
     }
 
-    private void Flip()
+    private void Flip(string direction)
     {  
-        isFacingRight = !isFacingRight;
-        transform.Rotate(0f, 180f, 0f);
+        if(direction == right)
+        {
+            isFacingRight = true;
+            transform.rotation = new Quaternion(0f, 0f, 0f, 1f);
+        }
+        else if(direction == left)
+        {
+            isFacingRight = false;
+            transform.rotation = new Quaternion(0f, 180f, 0f, 1f);
+        }
     }
 }
