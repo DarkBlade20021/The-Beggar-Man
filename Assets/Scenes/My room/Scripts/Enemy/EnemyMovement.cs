@@ -8,11 +8,10 @@ public class EnemyMovement : MonoBehaviour
     public CapsuleCollider2D healthCollider;
     public GameObject[] deathObjs;
     public EnemyHealth health;
+    public EnemyProp Data;
 
     public Transform pointA;
     public Transform pointB;
-    public float moveSpeed = 2f;
-    public float chaseSpeed = 5f;
     public float noticeTime;
     public bool noticed;
 
@@ -30,8 +29,10 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = pointA;
+        print("Before: " + transform.localScale);
+        transform.localScale = Data.scale;
         originalScale = transform.localScale;
-        print(transform.rotation);
+        print("After: " + transform.localScale);
     }
 
     void Update()
@@ -53,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
             if (!isChasing && !stoppedChasing )
             {
                 // Patrol between point A and point B
-                transform.position = Vector3.MoveTowards(transform.position, new    Vector3(target.position.x, target.position.y, -16.5f), moveSpeed *     Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, new    Vector3(target.position.x, target.position.y, -16.5f), Data.moveSpeed *     Time.deltaTime);
 
                 // Switch target points when the enemy reaches one of them
                 if (Vector3.Distance(transform.position, new Vector3(pointA.    position.x, pointA.position.y, -16.5f)) < 0.5f)
@@ -84,7 +85,7 @@ public class EnemyMovement : MonoBehaviour
                     chaseTarget = new Vector3(-target.position.x, -target.position. y, -16.5f);
                 }
 
-                transform.position = Vector3.MoveTowards(transform.position,    chaseTarget, chaseSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position,    chaseTarget, Data.chaseSpeed * Time.deltaTime);
 
                 // Flip the sprite if moving towards the target
                 if (transform.position.x < chaseTarget.x && !isFacingRight)

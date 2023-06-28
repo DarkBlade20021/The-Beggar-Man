@@ -6,12 +6,12 @@ public class EnemyHealth : MonoBehaviour
 {
     [Header("Properties")]
     public float health;
-    public float maxHealth;
     public bool isDead = false;
     public bool looted = false;
 
     [Header("References")]
     public EnemyMovement enemy;
+    public EnemyProp Data;
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
     public bool playerInRange;
@@ -19,22 +19,24 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         visualCue.SetActive(false);
-        health = maxHealth;
+        health = Data.maxHealth;
     }
 
 
     void FixedUpdate()
     {
-        if(MyPlayer.Instance.interactAction.WasReleasedThisFrame() && !looted)
+        if(MyPlayer.Instance.interactAction.WasReleasedThisFrame() && !looted && isDead)
             ToInteract();
-        print(health + " / " + maxHealth + " HP");
         if(health <= 0 && !isDead)
             isDead = enemy.Die(isDead);
     }
 
     void ToInteract()
     {
-        CoinCounter.Instance.AddCoins(100);
+        if(!enemy.Data.isBoss)
+            CoinCounter.Instance.AddCoins(100);
+        else
+            Inventory.Instance.maxOpenned++;
         looted = true;
         Destroy(enemy.gameObject);
     }    

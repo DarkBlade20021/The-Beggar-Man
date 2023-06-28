@@ -12,7 +12,6 @@ public class CoinCounter : MonoBehaviour
 
     [Header("Properties")]
     public int maxCoins;
-    public int CoinsInBag;
     int subtractedCoins;
     int additionnedCoins;
     public float waitWhat = 0.5f;
@@ -47,18 +46,18 @@ public class CoinCounter : MonoBehaviour
 
     public void SubtractCoins()
     {
-        if(Coins >= CoinsInBag)
+        if(Coins >= Inventory.Instance.currentBag.cost)
             StartCoroutine(SubtractCoinsRoutine());
     }
 
     IEnumerator SubtractCoinsRoutine()
     {
         GameObject coinSubtracterText = Instantiate(coinSubtracterObj, coinChangement);
-        coinSubtracterText.GetComponent<TMP_Text>().text = "-" + CoinsInBag;
-        Coins -= CoinsInBag;
+        coinSubtracterText.GetComponent<TMP_Text>().text = "-" + Inventory.Instance.currentBag.cost;
+        Coins -= Inventory.Instance.currentBag.cost;
         yield return new WaitForSeconds(waitWhat);
         Destroy(coinSubtracterText);
-        CoinsUI -= CoinsInBag;
+        CoinsUI -= Inventory.Instance.currentBag.cost;
     }
 
     public void SubtractCoinsPercentage(int percentage)

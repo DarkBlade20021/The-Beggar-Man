@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     [Header("Properties")]
-    public float shootRange;
     public float shootTime;
     public bool canShoot;
     public bool shooting;
@@ -37,7 +36,7 @@ public class Shoot : MonoBehaviour
 
     void ToThrow()
     {
-        if(CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && !shooting && bagsInstantiating == 0)
+        if(CoinCounter.Instance.Coins >= Inventory.Instance.currentBag.cost && !shooting && bagsInstantiating == 0)
         {
             #region ANIMATION SOLVERS
             MyPlayer.Instance.anim.SetBool("isThrowing", false);
@@ -53,9 +52,9 @@ public class Shoot : MonoBehaviour
         newBag.transform.localScale = shootPoint.localScale;
         Rigidbody2D rb = newBag.GetComponentInChildren<Rigidbody2D>();
         if(MyPlayer.Instance.IsFacingRight)
-            rb.AddForce(direction * shootRange);
+            rb.AddForce(direction * Inventory.Instance.currentBag.shootRange);
         else
-            rb.AddForce(new Vector2(-direction.x, direction.y) * shootRange);
+            rb.AddForce(new Vector2(-direction.x, direction.y) * Inventory.Instance.currentBag.shootRange);
         bagsInstantiated++;
     }
 

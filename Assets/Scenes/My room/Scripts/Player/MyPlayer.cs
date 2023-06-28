@@ -33,6 +33,10 @@ public class MyPlayer : MonoBehaviour
 	public InputAction throwAction;
 	[Header("Interact Action")]
 	public InputAction interactAction;
+    [Header("Next Inventory Action")]
+    public InputAction nextAction;
+	[Header("Previous Inventory Action")]
+	public InputAction previousAction;
 	#endregion
 
 	#region STATE PARAMETERS
@@ -89,6 +93,8 @@ public class MyPlayer : MonoBehaviour
 		dropAction.Enable();
 		throwAction.Enable();
 		interactAction.Enable();
+		nextAction.Enable();
+		previousAction.Enable();
     }
     private void OnDisable()
     {
@@ -97,6 +103,8 @@ public class MyPlayer : MonoBehaviour
 		dropAction.Disable();
 		throwAction.Disable();
 		interactAction.Disable();
+		nextAction.Disable();
+		previousAction.Disable();
     }
 
     private void Awake()

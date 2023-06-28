@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 301310029
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: -7904091810860947230, guid: 3fc2aa4f891ead24eac2c95e4c923311,
     type: 3}
@@ -640,8 +640,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 301310029
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -5069902572750452148, guid: 3fc2aa4f891ead24eac2c95e4c923311,
     type: 3}
@@ -979,8 +979,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 301310029
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: -6223517116520118347, guid: 3fc2aa4f891ead24eac2c95e4c923311,
     type: 3}
@@ -1006,9 +1006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3937daefd5e8ced4aa25feed86034799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Data: {fileID: 0}
   contacted: 0
-  time: 0.02
-  damage: 50
   throwRightRot: {x: 0, y: 0, z: 0.3, w: 0}
   throwLeftRot: {x: 0, y: 0, z: -0.3, w: 0}
   dropSfxs:
@@ -1018,6 +1017,9 @@ MonoBehaviour:
   - {fileID: 2598199510023220093}
   - {fileID: 6353054674862740921}
   mainObject: {fileID: 3866114603615866371}
+  ropes:
+  - {fileID: 1336390024883560056}
+  - {fileID: 2779014523839405485}
   rb: {fileID: 4653839377698532706}
   groundTags:
   - Ground

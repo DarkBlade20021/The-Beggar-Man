@@ -98,8 +98,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 447
+      x: 194
+      y: 398
       width: 75
       height: 60
     spriteID: d323fc1cb780b3d4e96934854b1da641
@@ -112,7 +112,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -16, y: 212}
+    uvTransform: {x: 175, y: 164}
   - name: Rope
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -134,7 +134,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -82, y: 129}
+    uvTransform: {x: -81, y: 130}
   - name: Bag
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -182,7 +182,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: d323fc1cb780b3d4e96934854b1da641
     layerID: 17
-    mosaicPosition: {x: 4, y: 447}
+    mosaicPosition: {x: 194, y: 398}
   - name: Rope
     spriteName: Rope
     isGroup: 0

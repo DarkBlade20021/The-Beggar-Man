@@ -32,7 +32,7 @@ public class Drop : MonoBehaviour
 	
 	void ToDrop()
 	{
-        if(CoinCounter.Instance.Coins >= CoinCounter.Instance.CoinsInBag && canDrop)
+        if(CoinCounter.Instance.Coins >= Inventory.Instance.currentBag.cost && canDrop)
         {
 			InstantiateBag();
         }

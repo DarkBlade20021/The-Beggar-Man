@@ -30,7 +30,7 @@ public class PickCoinBag : MonoBehaviour
 
     void PickUp()
     {
-        CoinCounter.Instance.AddCoins(CoinCounter.Instance.CoinsInBag);
+        CoinCounter.Instance.AddCoins(Inventory.Instance.currentBag.cost);
         Destroy(this);
     }
 
