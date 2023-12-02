@@ -15,5 +15,5 @@ MonoBehaviour:
   isBoss: 1
   moveSpeed: 1
   chaseSpeed: 2
-  maxHealth: 300
-  scale: {x: 1.5, y: 1.5, z: 1}
+  maxHealth: 50
+  scale: {x: 1.1, y: 1.1, z: 1}

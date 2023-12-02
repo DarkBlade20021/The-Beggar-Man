@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 575
   cost: 75
-  time: 2.5
+  time: 0.025
   damage: 40
   scale: {x: 0.175, y: 0.175, z: 1}
   color: {r: 0.8867924, g: 0.76006293, b: 0.17986828, a: 1}

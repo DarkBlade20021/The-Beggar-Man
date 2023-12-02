@@ -57,6 +57,5 @@ public class Inventory : MonoBehaviour
         foreach(GameObject ui in coinBagsUi)
             ui.SetActive(false);
         coinBagsUi[current].SetActive(true);
-        print(current);
    }
 }

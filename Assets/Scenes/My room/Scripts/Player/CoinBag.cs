@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinBag : MonoBehaviour
 {
     [Header("Properties")]
+    public float destoryTime;
     public CoinBagItem Data;
     public bool contacted;
     public Quaternion throwRightRot;
@@ -13,7 +14,9 @@ public class CoinBag : MonoBehaviour
     [Header("References")]
     public AudioSource[] dropSfxs;
     public GameObject mainObject;
+    public ParticleSystem destroyPS;
     public SpriteRenderer[] ropes;
+    public Animator anim;
     public Rigidbody2D rb;
     public string[] groundTags;
     public string[] enemyTags;
@@ -28,11 +31,21 @@ public class CoinBag : MonoBehaviour
 
     private void Update()
     {
+        if(contacted)
+            StartCoroutine(DestroyR());
         if(MyPlayer.Instance.IsFacingRight && !contacted)
-            mainObject.transform.rotation = Quaternion.Lerp(transform.rotation, throwRightRot, Data.time);
+            this.transform.rotation = Quaternion.Lerp(transform.rotation, throwRightRot, Data.time);
         else if(!MyPlayer.Instance.IsFacingRight && !contacted)
-            mainObject.transform.rotation = Quaternion.Lerp(transform.rotation, throwLeftRot, Data.time);
+            this.transform.rotation = Quaternion.Lerp(transform.rotation, throwLeftRot, Data.time);
     }
+
+    IEnumerator DestroyR()
+    {
+        yield return new WaitForSeconds(destoryTime);
+        destroyPS.Play();
+        anim.SetBool("isDestroyed", true);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -23,11 +23,12 @@ public class EnemyJumpPad : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            if(collision.GetComponent<EnemyPatrol>().isChasing == true || collision.GetComponent<EnemyPatrol>().stoppedChasing == true)
-            {
-                collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,  jumpForce), ForceMode2D.Impulse);
-                collision.GetComponent<Animator>().SetTrigger("jump");
-            }
+            //Jumping here:
+            //if(collision.GetComponent<EnemyPatrol>().isChasing == true || //collision.GetComponent<EnemyPatrol>().stoppedChasing == true)
+            //{
+            //    collision.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f,  //jumpForce), ForceMode2D.Impulse);
+            //    collision.GetComponent<Animator>().SetTrigger("jump");
+            //}
         }
     }
 }

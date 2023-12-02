@@ -20,8 +20,9 @@ public class EnemySteal : MonoBehaviour
         {
             if(playerStamina.isKnockedOut && playerStamina.lastEnemy == this)
             {
-                patrol.stoppedChasing = true;
-                patrol.isChasing = false;
+                //Stop CHasing Here:
+                //patrol.stoppedChasing = true;
+                //patrol.isChasing = false;
             }
         }
         if(playerStamina != null)

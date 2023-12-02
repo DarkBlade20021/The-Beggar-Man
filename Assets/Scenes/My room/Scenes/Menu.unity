@@ -2527,7 +2527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 6
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 891799767}
     m_SelectOnDown: {fileID: 1931397915}
@@ -5090,7 +5090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 6
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1178891586}
     m_SelectOnDown: {fileID: 325651216}
@@ -5811,7 +5811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 6
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1931397915}
     m_SelectOnDown: {fileID: 1178891586}
@@ -6989,7 +6989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 6
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1039121304}
     m_SelectOnDown: {fileID: 891799767}
@@ -13023,7 +13023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 4
+    m_Mode: 6
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 325651216}
     m_SelectOnDown: {fileID: 1039121304}
